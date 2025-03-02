@@ -1,5 +1,5 @@
 // src\app\layout.js
-
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 import { Inter } from 'next/font/google';
 import Navbar from '@/components/Navbar';
@@ -15,7 +15,7 @@ const inter = Inter({
 const baseURL =
   process.env.NEXT_PUBLIC_BASE_URL ||
   (process.env.NODE_ENV === 'production'
-    ? 'https://www.projektikuce.com'
+    ? 'https://www.projektikuce.rs'
     : 'http://localhost:3001');
 
 export const metadata = {
@@ -102,7 +102,7 @@ export default function RootLayout({ children }) {
               },
               contactPoint: {
                 '@type': 'ContactPoint',
-                telephone: '+381-XX-XXX-XXXX',
+                telephone: '+381-62-277-686',
                 contactType: 'customer service',
               },
             }),
@@ -113,6 +113,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
