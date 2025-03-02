@@ -14,13 +14,13 @@ export const metadata = {
   keywords:
     'kontakt, projektovanje kuće, projektovanje kuća, projektovanje, arhitektonske usluge, izrada projekata, Paraćin, Srbija',
   alternates: {
-    canonical: 'https://www.projektikuce.com/kontakt',
+    canonical: 'https://www.projektikuce.rs/kontakt',
   },
   openGraph: {
     title: 'Kontakt | Projektovanje Kuća i Stambenih Objekata',
     description:
       'Kontaktirajte nas za profesionalno projektovanje vaše nove kuće ili stambenog objekta.',
-    url: 'https://www.projektikuce.com/kontakt',
+    url: 'https://www.projektikuce.rs/kontakt',
     type: 'website',
     images: [
       {

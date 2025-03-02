@@ -18,13 +18,13 @@ export const metadata = {
     'održiva gradnja',
   ],
   alternates: {
-    canonical: 'https://www.projektikuce.com/blog',
+    canonical: 'https://www.projektikuce.rs/blog',
   },
   openGraph: {
     title: 'Blog | Projekti Kuća - Saveti o projektovanju kuća',
     description:
       'Stručni članci i saveti o projektovanju kuća, arhitekturi i uređenju doma - vaš vodič kroz proces projektovanja.',
-    url: 'https://www.projektikuce.com/blog',
+    url: 'https://www.projektikuce.rs/blog',
     type: 'website',
     images: [
       {

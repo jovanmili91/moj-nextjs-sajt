@@ -19,17 +19,17 @@ export const metadata = {
     'Paraćin',
   ],
   alternates: {
-    canonical: 'https://www.projektikuce.com/o-nama',
+    canonical: 'https://www.projektikuce.rs/o-nama',
     languages: {
-      'sr-RS': 'https://www.projektikuce.com/o-nama',
-      'en-US': 'https://www.projektikuce.com/en/about-us',
+      'sr-RS': 'https://www.projektikuce.rs/o-nama',
+      'en-US': 'https://www.projektikuce.rs/en/about-us',
     },
   },
   openGraph: {
     title: 'O Nama | Projektovanje Kuća - Inovativni Dizajn',
     description:
       'Stručnjaci za projektovanje kuća posvećeni stvaranju prostora koji inspirišu i čuvaju planetu.',
-    url: 'https://www.projektikuce.com/o-nama',
+    url: 'https://www.projektikuce.rs/o-nama',
     type: 'website',
     images: [
       {
@@ -57,11 +57,11 @@ export default function AboutPage() {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    '@id': 'https://www.projektikuce.com',
+    '@id': 'https://www.projektikuce.rs',
     name: 'Projekti Kuće',
     description:
       'Stručnjaci za projektovanje kuća koji spajaju inovativni dizajn, održivost i funkcionalnost za savršene domove.',
-    url: 'https://www.projektikuce.com/o-nama',
+    url: 'https://www.projektikuce.rs/o-nama',
     telephone: '+38111000000', // Promeni na stvaran broj
     address: {
       '@type': 'PostalAddress',
@@ -85,7 +85,7 @@ export default function AboutPage() {
       'https://www.facebook.com/projektikuce', // Promeni na stvarne linkove
       'https://www.instagram.com/projektikuce',
     ],
-    image: ['https://www.projektikuce.com/images/about-hero.webp'],
+    image: ['https://www.projektikuce.rs/images/about-hero.webp'],
     priceRange: '$$',
     serviceArea: {
       '@type': 'GeoCircle',

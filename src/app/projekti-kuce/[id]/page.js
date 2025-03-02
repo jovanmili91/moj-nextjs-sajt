@@ -38,7 +38,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: `${project.title} | Projekti i Projektovanje Kuća`,
       description: project.description,
-      url: `https://www.projektikuce.com/projekti-kuce/${id}`, // Zamena params.id sa id
+      url: `https://www.projektikuce.rs/projekti-kuce/${id}`, // Zamena params.id sa id
       images: [
         {
           url: project.imageURL,
@@ -56,7 +56,7 @@ export async function generateMetadata({ params }) {
       images: [project.imageURL],
     },
     alternates: {
-      canonical: `https://www.projektikuce.com/projekti-kuce/${id}`, // Zamena params.id sa id
+      canonical: `https://www.projektikuce.rs/projekti-kuce/${id}`, // Zamena params.id sa id
     },
     other: {
       'revisit-after': '7 days',

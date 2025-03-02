@@ -16,7 +16,7 @@
 //     title: 'Pretplata Uspešna | Projektovanje Kuća',
 //     description:
 //       'Hvala vam što ste se pretplatili na naš newsletter za projektovanje kuća.',
-//     url: 'https://www.projektikuce.com/subscription-success',
+//     url: 'https://www.projektikuce.rs/subscription-success',
 //     images: [
 //       {
 //         url: '/images/hero-image.webp', // Promenio sam putanju na ono što si naveo kao ispravno

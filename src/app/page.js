@@ -25,13 +25,13 @@ export const metadata = {
     'stambeni objekti',
   ],
   alternates: {
-    canonical: 'https://www.projektikuce.com',
+    canonical: 'https://www.projektikuce.rs',
   },
   openGraph: {
     title: 'Projektovanje Kuća | Projekti Kuća - Vaš Savršeni Dom',
     description:
       'Profesionalno projektovanje kuća - stvaramo funkcionalnu arhitekturu sa karakterom prilagođenu vašim potrebama.',
-    url: 'https://www.projektikuce.com',
+    url: 'https://www.projektikuce.rs',
     type: 'website',
     images: [
       {

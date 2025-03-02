@@ -814,14 +814,14 @@ export default function ProjectsClient() {
               name: 'Projekti Kuća - Profesionalno projektovanje kuća',
               description:
                 'Profesionalno projektovanje kuća koje spaja estetiku, funkcionalnost i održivost za vaš idealan dom.',
-              image: 'https://www.projektikuce.com/images/projects-hero.webp',
+              image: 'https://www.projektikuce.rs/images/projects-hero.webp',
               address: {
                 '@type': 'PostalAddress',
                 addressLocality: 'Paraćin',
                 addressRegion: 'Serbia',
               },
               telephone: '+381123456789',
-              url: 'https://www.projektikuce.com/projekti-kuce',
+              url: 'https://www.projektikuce.rs/projekti-kuce',
               priceRange: '€€€',
               openingHours: 'Mo-Fr 09:00-17:00',
               sameAs: [

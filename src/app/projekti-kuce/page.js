@@ -18,13 +18,13 @@ export const metadata = {
     'održivi projekti',
   ],
   alternates: {
-    canonical: 'https://www.projektikuce.com/projekti-kuce',
+    canonical: 'https://www.projektikuce.rs/projekti-kuce',
   },
   openGraph: {
     title: 'Projekti Kuća | Profesionalno projektovanje kuća po meri',
     description:
       'Kolekcija naših jedinstvenih projekata i stručno projektovanje kuća - inspiracija za vaš savršeni dom.',
-    url: 'https://www.projektikuce.com/projekti-kuce',
+    url: 'https://www.projektikuce.rs/projekti-kuce',
     type: 'website',
     images: [
       {

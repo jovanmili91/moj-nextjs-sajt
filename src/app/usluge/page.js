@@ -9,13 +9,13 @@ export const metadata = {
   keywords:
     'projektovanje kuće, projektovanje kuća, projektovanje, arhitektonske usluge, renoviranje, tehnička dokumentacija, stručni nadzor, Paraćin, Srbija',
   alternates: {
-    canonical: 'https://www.projektikuce.com/usluge',
+    canonical: 'https://www.projektikuce.rs/usluge',
   },
   openGraph: {
     title: 'Usluge | Projektovanje Kuća i Stambenih Objekata',
     description:
       'Kompletne usluge projektovanja kuća - od ideje do realizacije vašeg doma.',
-    url: 'https://www.projektikuce.com/usluge',
+    url: 'https://www.projektikuce.rs/usluge',
     type: 'website',
     images: [
       {

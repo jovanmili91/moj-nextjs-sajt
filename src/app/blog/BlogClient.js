@@ -749,13 +749,13 @@ export default function BlogClient() {
               name: 'Blog o projektovanju kuća - Projekti Kuća',
               description:
                 'Stručni blog o projektovanju kuća sa savetima, trendovima i inspiracijom za vaš budući dom.',
-              url: 'https://www.projektikuce.com/blog',
+              url: 'https://www.projektikuce.rs/blog',
               publisher: {
                 '@type': 'Organization',
                 name: 'Projekti Kuća',
                 logo: {
                   '@type': 'ImageObject',
-                  url: 'https://www.projektikuce.com/images/logo.webp',
+                  url: 'https://www.projektikuce.rs/images/logo.webp',
                 },
               },
               author: {

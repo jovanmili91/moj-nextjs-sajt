@@ -41,7 +41,7 @@ export async function generateMetadata({ params }) {
       openGraph: {
         title: `${blog.title} | Blog o projektovanju kuća`,
         description: blog.description,
-        url: `https://www.projektikuce.com/blog/${slug}`,
+        url: `https://www.projektikuce.rs/blog/${slug}`,
         images: [
           {
             url: blog.imageURL,
@@ -174,7 +174,7 @@ function BlogHeader({
 }
 
 function ShareLinks({ title, slug }) {
-  const url = `https://www.projektikuce.com/blog/${slug}`;
+  const url = `https://www.projektikuce.rs/blog/${slug}`;
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(
     `${title} | Blog o projektovanju kuća`
@@ -493,7 +493,7 @@ export default async function BlogPostPage({ params }) {
                 name: 'Projekti Kuća',
                 logo: {
                   '@type': 'ImageObject',
-                  url: 'https://www.projektikuce.com/images/logo.webp',
+                  url: 'https://www.projektikuce.rs/images/logo.webp',
                 },
               },
               datePublished: blog.publishedAt,
@@ -504,7 +504,7 @@ export default async function BlogPostPage({ params }) {
                 blog.tags.join(', '),
               mainEntityOfPage: {
                 '@type': 'WebPage',
-                '@id': `https://www.projektikuce.com/blog/${blog.slug}`,
+                '@id': `https://www.projektikuce.rs/blog/${blog.slug}`,
               },
             }),
           }}

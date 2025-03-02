@@ -88,11 +88,11 @@
   }
 
   .btn-primary {
-    @apply bg-primary-500 hover:bg-primary-700 text-white shadow-md hover:shadow-lg;
+    @apply bg-primary-500 text-white shadow-md hover:bg-primary-700 hover:shadow-lg;
   }
 
   .btn-outline {
-    @apply hover:text-primary-500 border-2 border-white text-white hover:bg-white;
+    @apply border-2 border-white text-white hover:bg-white hover:text-white;
   }
 
   .house-card {
