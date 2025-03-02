@@ -7,6 +7,18 @@ tags: ['Održivo', 'Ekološki', 'Efikasno']
 area: 360m²
 location: Niš
 featured: false
+# Slike za galeriju - dodajte putanje do slika vašeg projekta
+images:
+  - /images/eko-kuca/galerija-1.webp
+  - /images/eko-kuca/galerija-2.webp
+  - /images/eko-kuca/galerija-3.webp
+  - /images/eko-kuca/galerija-4.webp
+  - /images/eko-kuca/galerija-5.webp
+size: 180m²
+floors: 1
+bedrooms: 3
+bathrooms: 2
+energyClass: A+
 specifications:
   size: 180m²
   floors: 1

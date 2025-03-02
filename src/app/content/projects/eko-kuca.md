@@ -23,6 +23,11 @@ images:
   - /images/eko-kuca/galerija-3.webp
   - /images/eko-kuca/galerija-4.webp
   - /images/eko-kuca/galerija-5.webp
+size: 180m²
+floors: 1
+bedrooms: 3
+bathrooms: 2
+energyClass: A+
 specifications:
   size: 180m²
   floors: 1
@@ -39,7 +44,7 @@ features:
   - Pametni sistem za upravljanje potrošnjom energije
   - Prirodna ventilacija i hlađenje
 completionYear: 2023
-price: Od 150.000€
+price: Od 120.000€
 ---
 
 # Eko kuća - Održivo stanovanje za budućnost

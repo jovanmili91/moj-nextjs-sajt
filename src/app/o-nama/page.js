@@ -194,7 +194,7 @@ export default function AboutPage() {
               <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
                 {[
                   {
-                    name: 'Ana Marković',
+                    name: 'Branko Milivojević',
                     title: 'Glavni Arhitekta',
                     image: '/images/placeholder-1.webp',
                     quote:
@@ -202,14 +202,14 @@ export default function AboutPage() {
                   },
                   {
                     name: 'Marko Petrović',
-                    title: 'Inženjer Održivosti',
+                    title: 'Arhitekta',
                     image: '/images/placeholder-2.webp',
                     quote:
                       'Projektovanje zelenih kuća je budućnost. Pronalazim tehnička rešenja koja štede energiju i čuvaju planetu.',
                   },
                   {
-                    name: 'Jelena Stojanović',
-                    title: 'Dizajner Enterijera',
+                    name: 'Jovan Milivojević',
+                    title: 'Glavni Arhitekta',
                     image: '/images/placeholder-3.webp',
                     quote:
                       'Detalji definišu projektovanje kuća. Svaki prostor treba da bude i funkcionalan i inspirativan za svakodnevni život.',
