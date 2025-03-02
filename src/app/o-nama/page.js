@@ -254,7 +254,7 @@ export default function AboutPage() {
               <div className="grid items-center gap-12 md:grid-cols-2">
                 <div className="aspect-h-9 aspect-w-16 relative h-0 overflow-hidden rounded-xl pb-[56.25%] shadow-lg">
                   <iframe
-                    src="https://www.youtube-nocookie.com/embed/38vK64FNbBI?autoplay=0&mute=1&vq=hd1080"
+                    src="https://www.youtube.com/embed/38vK64FNbBI"
                     title="Naša Priča - Projektovanje Kuća"
                     loading="lazy"
                     className="absolute left-0 top-0 h-full w-full"

@@ -3,7 +3,7 @@ id: 1
 title: Moderna Vila
 description: Prostrana vila sa minimalističkim dizajnom i velikim prozorima za maksimalnu prirodnu svetlost.
 imageURL: /images/minimalisticki-apartman.webp
-tags: ['Održivo', 'Ekološki', 'Efikasno']
+tags: ['Održivo', 'Ekološki', 'Efikasno', 'Održivi materijali']
 area: 160m²
 location: Niš
 featured: false

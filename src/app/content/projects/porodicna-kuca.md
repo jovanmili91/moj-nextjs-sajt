@@ -2,7 +2,7 @@
 id: 2
 title: Porodična Kuća
 description: Funkcionalan dom za porodicu sa decom, uključujući zeleno dvorište i pametne prostore.
-imageURL: /images/mediteranska-vila.webp
+imageURL: /images/blog-hero.webp
 tags: ['Održivo', 'Ekološki', 'Efikasno']
 area: 360m²
 location: Niš
