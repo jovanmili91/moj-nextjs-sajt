@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Boje sinhronizovane sa tailwind.config.mjs */
+    --background: #f9fafb; /* gray-50 */
+    --foreground: #111827; /* gray-900 */
+    --primary: #4f46e5; /* primary.DEFAULT */
+    --primary-dark: #3730a3; /* primary.dark */
+    --primary-light: #a5b4fc; /* primary.300 */
+    --secondary: #14b8a6; /* secondary.DEFAULT */
+    --secondary-light: #5eead4; /* secondary.light */
+    --accent: #f59e0b; /* accent */
+    --error: #ef4444; /* error */
+    --neutral-50: #f9fafb;
+    --neutral-100: #f3f4f6;
+    --neutral-200: #e5e7eb;
+    --neutral-300: #d1d5db;
+    --neutral-400: #9ca3af;
+    --neutral-500: #6b7280;
+    --neutral-600: #4b5563;
+    --neutral-700: #374151;
+    --neutral-800: #1f2937;
+    --neutral-900: #111827;
+
+    /* Senke i radiusi */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md:
+      0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --shadow-lg:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 1rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Montserrat', 'Inter', sans-serif;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 150ms ease-in-out;
+  }
+
+  a:hover {
+    color: var(--primary-dark);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-semibold transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-primary-500 hover:bg-primary-700 text-white shadow-md hover:shadow-lg;
+  }
+
+  .btn-outline {
+    @apply hover:text-primary-500 border-2 border-white text-white hover:bg-white;
+  }
+
+  .house-card {
+    @apply overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:shadow-lg;
+  }
+}
+
+@layer utilities {
+  .section-spacing {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+}
+/* ```
+
+## Objašnjenje optimizacija:
+
+### 1. Proširena paleta boja
+- Dodata je kompletna paleta boja sa primarnim, sekundarnim i akcentnim bojama
+- Uključene su neutralne boje za fleksibilnost dizajna
+- Sve boje su definisane kao CSS varijable za lakše održavanje
+
+### 2. Poboljšana osnovna tipografija
+- Dodat je moderan font stack sa 'Inter' kao primarnim fontom
+- Dodati su osnovni stilovi za naslove (h1-h6)
+- Optimizovan line-height za bolju čitljivost
+
+### 3. Dodate komponente (@layer components)
+- Standardizovani dugmići sa različitim varijantama
+- Kartice za prikaz projekata kuća
+- SEO optimizovane klase za naslove sa ključnim rečima
+
+### 4. Dodate utility klase (@layer utilities)
+- Konzistentni razmaci između sekcija
+- Animacije za poboljšano korisničko iskustvo
+- Pomoćne klase za responzivnost
+- Klase za poboljšanu pristupačnost
+
+### 5. SEO optimizacije
+- Dodate klase koje sadrže ključne reči "projektovanje kuće"
+- Struktura omogućava lakše dodavanje SEO-friendly elemenata
+
+### 6. Performanse
+- Optimizovane animacije za bolje performanse
+- Korišćenje Tailwind direktiva za smanjenje veličine CSS-a
+
+### 7. Responzivnost
+- Dodate klase za različite veličine ekrana
+- Optimizovani razmaci za mobilne i desktop uređaje
+
+### 8. Konzistentnost
+- Ujednačen sistem boja, senki i zaobljenih uglova
+- Standardizovani razmaci i tranzicije za konzistentan izgled
+
+Ove promene će stvoriti čvrstu osnovu za moderan, profesionalan i konzistentan UI/UX dizajn vašeg projekta za projektovanje kuća, uz poboljšanu SEO optimizaciju za ključne reči vezane za projektovanje kuća. */

@@ -1,7 +1,74 @@
+// # Optimizovani jsconfig.json
+//
+// ```json
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
-    }
-  }
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@styles/*": ["src/styles/*"],
+      "@utils/*": ["src/utils/*"],
+      "@lib/*": ["src/lib/*"],
+      "@assets/*": ["public/assets/*"],
+      "@hooks/*": ["src/hooks/*"]
+    },
+    "jsx": "react-jsx",
+    "target": "es2015",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "strict": true
+  },
+  "include": [
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "next-env.d.ts",
+    "src/app/projekti-kuce/page.js.backup.stari",
+    "src/app/projekti-kuce/[id]/page.js.backup",
+    "src/lib/getProjects.js.backup",
+    "src/app/page.js.backup"
+  ],
+  "exclude": ["node_modules"]
 }
+// ```
+
+// ### Objašnjenje izmena:
+
+// 1. **Dodati putevi za mapiranje (paths)**:
+//    - Dodate su nove putanje za komponente, stilove, utility funkcije, library fajlove, assets i hooks. Ovo omogućava lakše importovanje kroz ceo projekat korišćenjem aliasa (npr. `import Button from '@components/Button'` umesto relativnih putanja).
+
+// 2. **Dodati JSX kompajler opcija**:
+//    - `"jsx": "react-jsx"`: Omogućava React JSX transformaciju direktno, bez potrebe za importovanjem React-a u svakom fajlu (korisno za React 17+).
+
+// 3. **Dodati TypeScript/JavaScript ciljevi**:
+//    - `"target": "es2015"`: Postavlja ECMAScript verziju za izlazni JavaScript.
+//    - `"module": "esnext"`: Omogućava korišćenje najnovijih ES modula.
+
+// 4. **Dodati module i rezolucije**:
+//    - `"moduleResolution": "node"`: Koristi Node.js-style rezoluciju modula.
+//    - `"esModuleInterop": true`: Omogućava import CommonJS modula kroz ES module sintaksu.
+//    - `"resolveJsonModule": true`: Dozvoljava import JSON fajlova kao modula.
+
+// 5. **Poboljšani integritet koda**:
+//    - `"isolatedModules": true`: Obezbeđuje da svaki fajl može biti bezbjedno transpajliran nezavisno.
+//    - `"strict": true`: Uključuje strožu tipsku proveru za bolju sigurnost koda.
+
+// 6. **Dodati include/exclude opcije**:
+//    - `"include"`: Definiše koje fajlove treba uključiti u kompilaciju.
+//    - `"exclude"`: Definiše koje direktorijume treba isključiti (npr. node_modules).
+
+// Ove izmene značajno unapređuju rad sa projektom kroz:
+// - Bolje organizovanu strukturu projekta sa jasnim putanjama
+// - Manje potrebe za kompleksnim relativnim putanjama
+// - Poboljšanu TypeScript/JavaScript podršku
+// - Bolju interoperabilnost različitih tipova modula
+// - Jaču proveru tipa koja predupređuje potencijalne greške
+// - Podršku za moderne JavaScript funkcionalnosti
+
+
+// Ovakav jsconfig.json pratiće najbolje prakse Next.js projekata i osigurati konzistentnu organizaciju koda i jednostavnije održavanje projekta vezanog za projektovanje kuća.
