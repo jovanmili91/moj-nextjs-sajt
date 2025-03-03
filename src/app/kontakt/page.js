@@ -101,10 +101,10 @@ export default function Contact() {
                         Email
                       </p>
                       <a
-                        href="mailto:info@projektikuce.com"
+                        href="mailto:projektovanjekuce@gmail.com"
                         className="mt-1 text-sm text-[var(--primary)] hover:underline"
                       >
-                        info@projektikuce.com
+                        projektovanjekuce@gmail.com
                       </a>
                     </div>
                   </div>
@@ -161,7 +161,7 @@ export default function Contact() {
                         Adresa
                       </p>
                       <p className="mt-1 text-sm text-[var(--neutral-600)]">
-                        Glavna ulica 123, 35250 Paraćin
+                        Vojvode Mišića 33/A-4, 35250 Paraćin
                       </p>
                     </div>
                   </div>
