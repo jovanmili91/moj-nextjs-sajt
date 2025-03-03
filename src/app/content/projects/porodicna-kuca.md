@@ -3,7 +3,7 @@ id: 2
 title: Porodična Kuća
 description: Funkcionalan dom za porodicu sa decom, uključujući zeleno dvorište i pametne prostore.
 imageURL: /images/blog-hero.webp
-tags: ['Održivo', 'Ekološki', 'Efikasno']
+tags: ['Održivo', 'Ekološki', 'Efikasno', 'moderno']
 area: 360m²
 location: Niš
 featured: false

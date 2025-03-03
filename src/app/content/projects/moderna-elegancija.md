@@ -14,6 +14,8 @@ tags:
     'Kuća sa bazenom',
     'Staklene fasade',
     'Održiva gradnja',
+    'porodično',
+    'moderno',
   ]
 area: 180m²
 location: Beograd

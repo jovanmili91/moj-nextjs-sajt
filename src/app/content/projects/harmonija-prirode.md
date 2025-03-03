@@ -15,6 +15,8 @@ tags:
     'Prirodni materijali',
     'Funkcionalnost',
     'Arhitektonski dizajn',
+    'održivo',
+    'porodično',
   ]
 area: 195m²
 location: Paraćin

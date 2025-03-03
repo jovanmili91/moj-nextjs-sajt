@@ -15,6 +15,8 @@ tags:
     'Porodična kuća',
     'Projekat Niš',
     'Moderna kuća',
+    'moderno',
+    'porodično',
   ]
 area: 180m²
 location: Niš

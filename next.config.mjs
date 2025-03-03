@@ -59,7 +59,7 @@ const nextConfig = {
           {
             key: 'Content-Security-Policy',
             value:
-              "default-src 'self'; img-src 'self' https: data:; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self' https:; connect-src 'self' https:; frame-src 'self' https://www.youtube.com;",
+              "default-src 'self'; img-src 'self' https: data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline'; font-src 'self' https:; connect-src 'self' https:; frame-src 'self' https://www.youtube.com;",
           },
           {
             key: 'Strict-Transport-Security',
