@@ -65,7 +65,7 @@ export default function AboutPage() {
     telephone: '+38111000000', // Promeni na stvaran broj
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Glavna ulica 123', // Promeni na stvarnu adresu
+      streetAddress: 'Vojvode Mišića 33/A-4', // Promeni na stvarnu adresu
       addressLocality: 'Paraćin',
       postalCode: '35250',
       addressCountry: 'RS',

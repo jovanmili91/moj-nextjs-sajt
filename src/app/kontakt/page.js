@@ -128,10 +128,10 @@ export default function Contact() {
                         Telefon
                       </p>
                       <a
-                        href="tel:+381601234567"
+                        href="tel:+3816277686"
                         className="mt-1 text-sm text-[var(--primary)] hover:underline"
                       >
-                        +381 60 123 4567
+                        +381 62 277 686
                       </a>
                     </div>
                   </div>

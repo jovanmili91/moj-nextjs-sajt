@@ -820,9 +820,9 @@ export default function ProjectsClient() {
                 addressLocality: 'Paraćin',
                 addressRegion: 'Serbia',
               },
-              telephone: '+381123456789',
+              telephone: '+38162277686',
               url: 'https://www.projektikuce.rs/projekti-kuce',
-              priceRange: '€€€',
+              priceRange: '€€',
               openingHours: 'Mo-Fr 09:00-17:00',
               sameAs: [
                 'https://www.facebook.com/projektikuce',
