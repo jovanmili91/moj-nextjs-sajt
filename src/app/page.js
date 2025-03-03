@@ -23,6 +23,16 @@ export const metadata = {
     'arhitektonski planovi',
     'porodične kuće',
     'stambeni objekti',
+    'izgradnja kuće',
+    'kuće po meri',
+    'energetski efikasne kuće',
+    'savremene kuće',
+    'arhitektonsko projektovanje',
+    'građevinski projekti',
+    'idejno rešenje kuće',
+    'luksuzne kuće',
+    'pristupačne kuće',
+    'minimalistički dizajn kuće',
   ],
   alternates: {
     canonical: 'https://www.projektikuce.rs',
@@ -68,6 +78,7 @@ export default async function Home() {
               className="object-cover opacity-30"
               quality={85}
               priority={true}
+              fetchPriority="high"
               sizes="100vw"
               placeholder="blur"
               blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzM0NTZjYyI+PC9yZWN0Pjwvc3ZnPg=="
@@ -75,7 +86,7 @@ export default async function Home() {
           </div>
           <div className="container relative z-10 mx-auto max-w-6xl px-4 text-center">
             <h1 className="mb-6 text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl">
-              Projektovanje Kuća{' '}
+              Profesionalno Projektovanje Kuća
               <span className="mt-2 block">Za Moderan Način Života</span>
             </h1>
             <p className="mx-auto mb-8 max-w-2xl text-lg md:text-xl lg:text-2xl">
@@ -96,6 +107,97 @@ export default async function Home() {
                 aria-label="Započnite projektovanje vaše kuće"
               >
                 Započni Projektovanje
+              </Link>
+            </div>
+          </div>
+        </section>
+        <section className="bg-[var(--background)] py-16 md:py-24">
+          <div className="container mx-auto max-w-6xl px-4">
+            <h2 className="mb-4 text-center text-3xl font-bold text-[var(--foreground)] md:text-4xl">
+              Istaknuti Projekti Kuća
+            </h2>
+            <p className="mx-auto mb-12 max-w-3xl text-center text-lg text-[var(--neutral-600)]">
+              Pogledajte neke od naših najboljih projekata kuća. Svaki projekat
+              je rezultat pažljivog planiranja i saradnje sa klijentima.
+            </p>
+
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {featuredProjects.map((project) => (
+                <Link
+                  key={project.id}
+                  href={`/projekti-kuce/${project.id}`}
+                  className="group relative flex flex-col overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    {project.imageURL ? (
+                      <Image
+                        src={project.imageURL}
+                        alt={`${project.title} - Projekat kuće`}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                        quality={80}
+                      />
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center bg-[var(--neutral-200)]">
+                        <span className="text-[var(--neutral-400)]">
+                          Slika nije dostupna
+                        </span>
+                      </div>
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                  </div>
+                  <div className="flex flex-1 flex-col p-6">
+                    <h3 className="text-xl font-semibold text-[var(--neutral-800)] transition-colors group-hover:text-[var(--primary)]">
+                      {project.title}
+                    </h3>
+                    <p className="mt-2 line-clamp-2 text-[var(--neutral-600)]">
+                      {project.description ||
+                        'Detaljan projekat kuće prilagođen modernom načinu života.'}
+                    </p>
+                    <span className="mt-4 inline-block font-medium text-[var(--primary)]">
+                      Saznaj više
+                      <svg
+                        className="ml-1 inline-block h-4 w-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            <div className="mt-12 text-center">
+              <Link
+                href="/projekti-kuce"
+                className="inline-flex items-center rounded-full bg-[var(--primary)] px-6 py-3 text-lg font-semibold text-white transition-all duration-300 hover:bg-[var(--primary-dark)]"
+              >
+                <span>Naši Projekti Kuća</span>
+                <svg
+                  className="ml-2 h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  ></path>
+                </svg>
               </Link>
             </div>
           </div>
@@ -197,9 +299,9 @@ export default async function Home() {
         <FeaturesSection />
 
         {/* Kako funkcioniše naše projektovanje */}
-        <section className="bg-[var(--neutral-50)] py-16 md:py-24">
+        <section className="bg-[var(--neutral-50)] py-12 md:py-24">
           <div className="container mx-auto max-w-6xl px-4">
-            <div className="flex flex-col items-center gap-8 md:flex-row">
+            <div className="flex flex-col items-center gap-6 md:flex-row md:gap-8">
               <div className="text-center md:w-1/2 md:text-left">
                 <h2 className="mb-6 text-3xl font-bold text-[var(--foreground)] md:text-4xl">
                   Kako funkcioniše naše{' '}
@@ -245,15 +347,16 @@ export default async function Home() {
                 </ul>
               </div>
               <div className="mt-6 md:mt-0 md:w-1/2">
-                <div className="overflow-hidden rounded-xl shadow-xl">
+                <div className="mx-auto max-w-lg overflow-hidden rounded-xl shadow-xl">
                   <Image
                     src="/images/projektovanje-process.webp"
                     alt="Proces projektovanja kuće - od ideje do realizacije"
-                    width={600}
-                    height={400}
+                    width={1024}
+                    height={768}
                     className="h-auto w-full object-cover"
                     loading="lazy"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    sizes="(max-width: 768px) 95vw, (max-width: 1024px) 75vw, 512px"
+                    quality={90}
                   />
                 </div>
               </div>
@@ -262,97 +365,6 @@ export default async function Home() {
         </section>
 
         {/* Istaknuti projekti */}
-        <section className="bg-[var(--background)] py-16 md:py-24">
-          <div className="container mx-auto max-w-6xl px-4">
-            <h2 className="mb-4 text-center text-3xl font-bold text-[var(--foreground)] md:text-4xl">
-              Istaknuti Projekti Kuća
-            </h2>
-            <p className="mx-auto mb-12 max-w-3xl text-center text-lg text-[var(--neutral-600)]">
-              Pogledajte neke od naših najboljih projekata kuća. Svaki projekat
-              je rezultat pažljivog planiranja i saradnje sa klijentima.
-            </p>
-
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {featuredProjects.map((project) => (
-                <Link
-                  key={project.id}
-                  href={`/projekti-kuce/${project.id}`}
-                  className="group relative flex flex-col overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-                >
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    {project.imageURL ? (
-                      <Image
-                        src={project.imageURL}
-                        alt={`${project.title} - Projekat kuće`}
-                        fill
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        loading="lazy"
-                        quality={80}
-                      />
-                    ) : (
-                      <div className="flex h-full w-full items-center justify-center bg-[var(--neutral-200)]">
-                        <span className="text-[var(--neutral-400)]">
-                          Slika nije dostupna
-                        </span>
-                      </div>
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-                  </div>
-                  <div className="flex flex-1 flex-col p-6">
-                    <h3 className="text-xl font-semibold text-[var(--neutral-800)] transition-colors group-hover:text-[var(--primary)]">
-                      {project.title}
-                    </h3>
-                    <p className="mt-2 line-clamp-2 text-[var(--neutral-600)]">
-                      {project.description ||
-                        'Detaljan projekat kuće prilagođen modernom načinu života.'}
-                    </p>
-                    <span className="mt-4 inline-block font-medium text-[var(--primary)]">
-                      Saznaj više
-                      <svg
-                        className="ml-1 inline-block h-4 w-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        ></path>
-                      </svg>
-                    </span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-
-            <div className="mt-12 text-center">
-              <Link
-                href="/projekti-kuce"
-                className="inline-flex items-center rounded-full bg-[var(--primary)] px-6 py-3 text-lg font-semibold text-white transition-all duration-300 hover:bg-[var(--primary-dark)]"
-              >
-                Pregledaj sve projekte kuća
-                <svg
-                  className="ml-2 h-5 w-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  ></path>
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </section>
 
         {/* Blog sekcija */}
         <BlogSection />

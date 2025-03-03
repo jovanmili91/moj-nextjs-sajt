@@ -104,46 +104,27 @@
   .section-spacing {
     @apply py-16 md:py-20 lg:py-24;
   }
+  .image-container-responsive {
+    @apply relative w-full overflow-hidden rounded-xl shadow-xl;
+    aspect-ratio: 4/3;
+  }
+
+  .section-spacing-mobile {
+    @apply px-4 py-10 md:px-6 md:py-16 lg:py-24;
+  }
+  .image-container-fixed {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 75%; /* 4:3 aspect ratio */
+  }
+
+  .image-container-fixed img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
-/* ```
-
-## Objašnjenje optimizacija:
-
-### 1. Proširena paleta boja
-- Dodata je kompletna paleta boja sa primarnim, sekundarnim i akcentnim bojama
-- Uključene su neutralne boje za fleksibilnost dizajna
-- Sve boje su definisane kao CSS varijable za lakše održavanje
-
-### 2. Poboljšana osnovna tipografija
-- Dodat je moderan font stack sa 'Inter' kao primarnim fontom
-- Dodati su osnovni stilovi za naslove (h1-h6)
-- Optimizovan line-height za bolju čitljivost
-
-### 3. Dodate komponente (@layer components)
-- Standardizovani dugmići sa različitim varijantama
-- Kartice za prikaz projekata kuća
-- SEO optimizovane klase za naslove sa ključnim rečima
-
-### 4. Dodate utility klase (@layer utilities)
-- Konzistentni razmaci između sekcija
-- Animacije za poboljšano korisničko iskustvo
-- Pomoćne klase za responzivnost
-- Klase za poboljšanu pristupačnost
-
-### 5. SEO optimizacije
-- Dodate klase koje sadrže ključne reči "projektovanje kuće"
-- Struktura omogućava lakše dodavanje SEO-friendly elemenata
-
-### 6. Performanse
-- Optimizovane animacije za bolje performanse
-- Korišćenje Tailwind direktiva za smanjenje veličine CSS-a
-
-### 7. Responzivnost
-- Dodate klase za različite veličine ekrana
-- Optimizovani razmaci za mobilne i desktop uređaje
-
-### 8. Konzistentnost
-- Ujednačen sistem boja, senki i zaobljenih uglova
-- Standardizovani razmaci i tranzicije za konzistentan izgled
-
-Ove promene će stvoriti čvrstu osnovu za moderan, profesionalan i konzistentan UI/UX dizajn vašeg projekta za projektovanje kuća, uz poboljšanu SEO optimizaciju za ključne reči vezane za projektovanje kuća. */

@@ -1823,6 +1823,9 @@ select {
 .max-w-full {
   max-width: 100%;
 }
+.max-w-lg {
+  max-width: 32rem;
+}
 .max-w-md {
   max-width: 28rem;
 }
@@ -2699,81 +2702,48 @@ select {
 .ease-out {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
-/* ```
 
-## Objašnjenje optimizacija:
-
-### 1. Proširena paleta boja
-- Dodata je kompletna paleta boja sa primarnim, sekundarnim i akcentnim bojama
-- Uključene su neutralne boje za fleksibilnost dizajna
-- Sve boje su definisane kao CSS varijable za lakše održavanje
-
-### 2. Poboljšana osnovna tipografija
-- Dodat je moderan font stack sa 'Inter' kao primarnim fontom
-- Dodati su osnovni stilovi za naslove (h1-h6)
-- Optimizovan line-height za bolju čitljivost
-
-### 3. Dodate komponente (@layer components)
-- Standardizovani dugmići sa različitim varijantama
-- Kartice za prikaz projekata kuća
-- SEO optimizovane klase za naslove sa ključnim rečima
-
-### 4. Dodate utility klase (@layer utilities)
-- Konzistentni razmaci između sekcija
-- Animacije za poboljšano korisničko iskustvo
-- Pomoćne klase za responzivnost
-- Klase za poboljšanu pristupačnost
-
-### 5. SEO optimizacije
-- Dodate klase koje sadrže ključne reči "projektovanje kuće"
-- Struktura omogućava lakše dodavanje SEO-friendly elemenata
-
-### 6. Performanse
-- Optimizovane animacije za bolje performanse
-- Korišćenje Tailwind direktiva za smanjenje veličine CSS-a
-
-### 7. Responzivnost
-- Dodate klase za različite veličine ekrana
-- Optimizovani razmaci za mobilne i desktop uređaje
-
-### 8. Konzistentnost
-- Ujednačen sistem boja, senki i zaobljenih uglova
-- Standardizovani razmaci i tranzicije za konzistentan izgled
-
-Ove promene će stvoriti čvrstu osnovu za moderan, profesionalan i konzistentan UI/UX dizajn vašeg projekta za projektovanje kuća, uz poboljšanu SEO optimizaciju za ključne reči vezane za projektovanje kuća. */
 .after\:mx-auto::after {
   content: var(--tw-content);
   margin-left: auto;
   margin-right: auto;
 }
+
 .after\:mt-4::after {
   content: var(--tw-content);
   margin-top: 1rem;
 }
+
 .after\:block::after {
   content: var(--tw-content);
   display: block;
 }
+
 .after\:h-1::after {
   content: var(--tw-content);
   height: 0.25rem;
 }
+
 .after\:w-16::after {
   content: var(--tw-content);
   width: 4rem;
 }
+
 .after\:w-24::after {
   content: var(--tw-content);
   width: 6rem;
 }
+
 .after\:bg-\[var\(--accent\)\]::after {
   content: var(--tw-content);
   background-color: var(--accent);
 }
+
 .after\:bg-\[var\(--primary\)\]::after {
   content: var(--tw-content);
   background-color: var(--primary);
 }
+
 @media (hover: hover) and (pointer: fine) {
 
   .hover\:-translate-y-1:hover {
@@ -2928,48 +2898,61 @@ Ove promene će stvoriti čvrstu osnovu za moderan, profesionalan i konzistentan
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 }
+
 .focus\:border-\[var\(--primary\)\]:focus {
   border-color: var(--primary);
 }
+
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
+
 .focus\:ring-2:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
+
 .focus\:ring-\[var\(--primary\)\]:focus {
   --tw-ring-color: var(--primary);
 }
+
 .focus\:ring-blue-500:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity, 1));
 }
+
 .focus\:ring-primary:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(79 70 229 / var(--tw-ring-opacity, 1));
 }
+
 .focus\:ring-white:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity, 1));
 }
+
 .focus\:ring-white\/50:focus {
   --tw-ring-color: rgb(255 255 255 / 0.5);
 }
+
 .focus\:ring-opacity-50:focus {
   --tw-ring-opacity: 0.5;
 }
+
 .focus\:ring-offset-2:focus {
   --tw-ring-offset-width: 2px;
 }
+
 .focus\:ring-offset-\[var\(--neutral-900\)\]:focus {
   --tw-ring-offset-color: var(--neutral-900);
 }
+
 .disabled\:opacity-75:disabled {
   opacity: 0.75;
 }
+
 @media (hover: hover) and (pointer: fine) {
 
   .group:hover .group-hover\:translate-y-0 {
@@ -3005,59 +2988,75 @@ Ove promene će stvoriti čvrstu osnovu za moderan, profesionalan i konzistentan
     opacity: 1;
   }
 }
+
 .prose-headings\:text-\[var\(--neutral-800\)\] :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   color: var(--neutral-800);
 }
+
 .prose-h2\:mt-8 :is(:where(h2):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   margin-top: 2rem;
 }
+
 .prose-h2\:text-2xl :is(:where(h2):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   font-size: 1.5rem;
   line-height: 2rem;
 }
+
 .prose-p\:text-\[var\(--neutral-700\)\] :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   color: var(--neutral-700);
 }
+
 .prose-a\:text-\[var\(--primary\)\] :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   color: var(--primary);
 }
+
 .prose-a\:no-underline :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   text-decoration-line: none;
 }
+
 .prose-a\:transition-colors :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+
 @media (hover: hover) and (pointer: fine) {
 
   .hover\:prose-a\:text-\[var\(--primary-dark\)\] :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *))):hover {
     color: var(--primary-dark);
   }
 }
+
 .prose-blockquote\:border-l-\[var\(--primary\)\] :is(:where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   border-left-color: var(--primary);
 }
+
 .prose-blockquote\:bg-\[var\(--neutral-50\)\] :is(:where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   background-color: var(--neutral-50);
 }
+
 .prose-blockquote\:p-4 :is(:where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   padding: 1rem;
 }
+
 .prose-blockquote\:not-italic :is(:where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   font-style: normal;
 }
+
 .prose-strong\:text-\[var\(--neutral-800\)\] :is(:where(strong):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   color: var(--neutral-800);
 }
+
 .prose-img\:rounded-lg :is(:where(img):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   border-radius: var(--radius-lg);
 }
+
 .prose-img\:shadow-md :is(:where(img):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   --tw-shadow: var(--shadow-md);
   --tw-shadow-colored: var(--shadow-md);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+
 @media (min-width: 640px) {
 
   .sm\:mt-0 {
@@ -3118,6 +3117,7 @@ Ove promene će stvoriti čvrstu osnovu za moderan, profesionalan i konzistentan
     line-height: 1.75rem;
   }
 }
+
 @media (min-width: 768px) {
 
   .md\:col-span-2 {
@@ -3178,6 +3178,10 @@ Ove promene će stvoriti čvrstu osnovu za moderan, profesionalan i konzistentan
 
   .md\:gap-4 {
     gap: 1rem;
+  }
+
+  .md\:gap-8 {
+    gap: 2rem;
   }
 
   .md\:p-10 {
@@ -3241,6 +3245,7 @@ Ove promene će stvoriti čvrstu osnovu za moderan, profesionalan i konzistentan
     line-height: 1.75rem;
   }
 }
+
 @media (min-width: 1024px) {
 
   .lg\:sticky {
