@@ -173,7 +173,7 @@ const nextConfig = {
   env: {
     SITE_NAME: 'Projekti Kuća - Profesionalno projektovanje kuća',
     SITE_DESCRIPTION:
-      'Kvalitetno projektovanje kuća po meri, moderan dizajn i funkcionalna rešenja',
+      'Projekti Kuća, kvalitetno projektovanje kuća po meri, moderan dizajn i funkcionalna rešenja',
     SITE_URL: 'https://www.projektikuce.rs',
   },
 };

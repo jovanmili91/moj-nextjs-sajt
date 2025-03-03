@@ -9,10 +9,14 @@ const ProjectGallery = ({ images, projectTitle }) => {
 
   // Provera da li postoje slike
   if (!images || images.length === 0) {
-    return <div>Nema dostupnih slika za prikaz.</div>;
+    return (
+      <div className="p-4 text-center text-gray-500">
+        Nema dostupnih slika za prikaz.
+      </div>
+    );
   }
 
-  // Osigurava da imamo najmanje 4 slike
+  // Osigurava da imamo najmanje 4 slike za prikaz u gridu
   const ensuredImages =
     images.length >= 4
       ? images
@@ -51,65 +55,28 @@ const ProjectGallery = ({ images, projectTitle }) => {
   };
 
   return (
-    <>
-      <div
-        className="grid grid-cols-12 gap-2 md:gap-4"
-        onKeyDown={handleKeyDown}
-        tabIndex="0"
-      >
-        {/* Prva slika (velika) */}
-        <div className="col-span-12 md:col-span-8">
+    <div onKeyDown={handleKeyDown} tabIndex="0" className="focus:outline-none">
+      {/* Galerijski prikaz - Mobilni i desktop u jednom */}
+      <div>
+        <div className="mb-4">
+          {/* Velika glavna slika */}
           <div
-            className="relative h-64 w-full transform cursor-pointer overflow-hidden rounded-lg shadow-md transition hover:scale-[1.02] hover:shadow-lg md:h-80 lg:h-96"
+            className="relative w-full cursor-pointer overflow-hidden rounded-lg shadow-md"
             onClick={() => openLightbox(0)}
+            style={{ height: '300px' }}
           >
             <Image
-              src={ensuredImages[0]}
+              src={images[0]}
               alt={`${projectTitle} - glavna slika`}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 800px"
               className="object-cover"
-              loading="eager"
-              unoptimized={true} // Privremeno isključujemo optimizaciju za testiranje
+              priority
             />
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 opacity-0 transition-opacity hover:opacity-100">
-              <svg
-                className="h-10 w-10 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        {/* Desna kolona sa tri manje slike */}
-        <div className="col-span-12 mt-2 grid grid-rows-3 gap-2 md:col-span-4 md:mt-0 md:gap-4">
-          {ensuredImages.slice(1, 4).map((image, index) => (
-            <div
-              key={index}
-              className="relative h-20 w-full transform cursor-pointer overflow-hidden rounded-lg shadow-md transition hover:scale-[1.02] hover:shadow-lg md:h-24 lg:h-28"
-              onClick={() => openLightbox(index + 1)}
-            >
-              <Image
-                src={image}
-                alt={`${projectTitle} - slika ${index + 2}`}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 260px"
-                className="object-cover"
-                loading="eager"
-                unoptimized={true} // Privremeno isključujemo optimizaciju za testiranje
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 opacity-0 transition-opacity hover:opacity-100">
+            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 transition hover:opacity-100">
+              <div className="rounded-full bg-white bg-opacity-60 p-3">
                 <svg
-                  className="h-6 w-6 text-white"
+                  className="h-6 w-6 text-gray-800"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -123,139 +90,177 @@ const ProjectGallery = ({ images, projectTitle }) => {
                 </svg>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Grid za dodatne slike */}
+        <div className="grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-4">
+          {ensuredImages.slice(1).map((image, index) => (
+            <div
+              key={index}
+              className="relative h-40 cursor-pointer overflow-hidden rounded-lg shadow-md transition hover:shadow-lg md:h-48"
+              onClick={() => openLightbox(index + 1)}
+              style={{ height: '150px' }}
+            >
+              <Image
+                src={image}
+                alt={`${projectTitle} - slika ${index + 2}`}
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 opacity-0 transition hover:opacity-100">
+                <div className="rounded-full bg-white bg-opacity-60 p-2">
+                  <svg
+                    className="h-4 w-4 text-gray-800"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M21 21l-4-4m2-2a7 7 0 11-14 0 7 7 0 0114 0z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
 
-        {/* Dugme za prikaz svih slika ako ih ima više od 4 */}
+        {/* Dugme za prikaz svih slika */}
         {images.length > 4 && (
-          <div className="col-span-12 mt-2">
-            <button
-              onClick={() => openLightbox(0)}
-              className="w-full rounded-lg bg-[var(--primary)] py-2 font-medium text-white transition hover:bg-[var(--primary-dark)]"
+          <button
+            onClick={() => openLightbox(0)}
+            className="mt-4 flex w-full items-center justify-center space-x-2 rounded-lg bg-[var(--primary)] py-3 font-medium text-white shadow-md transition hover:bg-[var(--primary-dark)]"
+          >
+            <svg
+              className="h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
             >
-              Prikaži sve slike ({images.length})
-            </button>
-          </div>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+            <span>Prikaži sve slike ({images.length})</span>
+          </button>
         )}
       </div>
 
-      {/* Lightbox za prikaz slika preko celog ekrana */}
+      {/* Lightbox */}
       {isLightboxOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90">
-          <div className="relative flex h-full w-full flex-col">
-            {/* Zaglavlje lightbox-a */}
-            <div className="flex items-center justify-between bg-black bg-opacity-50 px-4 py-2">
-              <span className="text-white">
-                {activeImage + 1} / {images.length}
-              </span>
-              <button
-                onClick={closeLightbox}
-                className="text-white transition hover:text-gray-300"
-                aria-label="Zatvori galeriju"
+        <div className="fixed inset-0 z-50 flex flex-col bg-black bg-opacity-95">
+          {/* Zaglavlje lightbox-a */}
+          <div className="flex items-center justify-between bg-black p-4">
+            <span className="font-medium text-white">
+              {activeImage + 1} / {images.length}
+            </span>
+            <button
+              onClick={closeLightbox}
+              className="rounded-full p-2 text-white hover:bg-gray-800"
+              aria-label="Zatvori galeriju"
+            >
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-            </div>
-
-            {/* Glavna slika */}
-            <div className="flex flex-grow items-center justify-center p-4">
-              <div className="relative h-[60vh] w-[80vw]">
-                <Image
-                  src={images[activeImage]}
-                  alt={`${projectTitle} - slika ${activeImage + 1}`}
-                  fill
-                  sizes="90vw"
-                  className="object-contain"
-                  quality={90}
-                  unoptimized={true} // Privremeno isključujemo optimizaciju za testiranje
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
                 />
-              </div>
+              </svg>
+            </button>
+          </div>
+
+          {/* Kontejner za glavnu sliku */}
+          <div className="relative flex flex-grow items-center justify-center p-4">
+            {/* Navigaciona dugmad */}
+            <button
+              onClick={prevImage}
+              className="absolute left-4 z-10 rounded-full bg-black bg-opacity-50 p-3 text-white"
+              aria-label="Prethodna slika"
+            >
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+
+            {/* Slika */}
+            <div className="h-full max-h-[70vh] max-w-full">
+              <img
+                src={images[activeImage]}
+                alt={`${projectTitle} - slika ${activeImage + 1}`}
+                className="h-full max-h-full w-auto max-w-full object-contain"
+              />
             </div>
 
-            {/* Kontrole za navigaciju */}
-            <div className="flex items-center justify-between p-4">
-              <button
-                onClick={prevImage}
-                className="rounded-full bg-white bg-opacity-10 p-2 text-white transition hover:bg-opacity-20"
-                aria-label="Prethodna slika"
+            <button
+              onClick={nextImage}
+              className="absolute right-4 z-10 rounded-full bg-black bg-opacity-50 p-3 text-white"
+              aria-label="Sledeća slika"
+            >
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  className="h-8 w-8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-              </button>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+          </div>
 
-              <button
-                onClick={nextImage}
-                className="rounded-full bg-white bg-opacity-10 p-2 text-white transition hover:bg-opacity-20"
-                aria-label="Sledeća slika"
-              >
-                <svg
-                  className="h-8 w-8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+          {/* Minijature na dnu */}
+          <div className="bg-black p-2">
+            <div className="flex space-x-2 overflow-x-auto pb-2">
+              {images.map((image, index) => (
+                <div
+                  key={index}
+                  className={`relative h-16 w-24 flex-shrink-0 cursor-pointer rounded ${
+                    activeImage === index
+                      ? 'ring-2 ring-[var(--primary)]'
+                      : 'opacity-50 hover:opacity-100'
+                  }`}
+                  onClick={() => setActiveImage(index)}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
+                  <img
+                    src={image}
+                    alt={`${projectTitle} - thumbnail ${index + 1}`}
+                    className="h-full w-full rounded object-cover"
                   />
-                </svg>
-              </button>
-            </div>
-
-            {/* Preview traka za slike */}
-            <div className="overflow-x-auto bg-black bg-opacity-50 p-2">
-              <div className="flex space-x-2">
-                {images.map((image, index) => (
-                  <div
-                    key={index}
-                    className={`relative h-16 w-24 flex-shrink-0 cursor-pointer ${
-                      activeImage === index
-                        ? 'ring-2 ring-[var(--primary)]'
-                        : ''
-                    }`}
-                    onClick={() => setActiveImage(index)}
-                  >
-                    <Image
-                      src={image}
-                      alt={`${projectTitle} - thumbnail ${index + 1}`}
-                      fill
-                      sizes="96px"
-                      className="object-cover"
-                      unoptimized={true} // Privremeno isključujemo optimizaciju za testiranje
-                    />
-                  </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

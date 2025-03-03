@@ -37,7 +37,7 @@ const Navbar = () => {
     {
       href: '/projekti-kuce',
       label: 'Projekti Kuća',
-      keywords: 'projektovanje kuća, projektovanje kuće',
+      keywords: 'projektovanje kuća, projektovanje kuće, projekti kuca',
     },
     { href: '/blog', label: 'Blog' },
     { href: '/o-nama', label: 'O Nama' },

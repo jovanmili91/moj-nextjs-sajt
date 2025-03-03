@@ -351,7 +351,7 @@ function ContactInfo() {
       </p>
       <div className="space-y-3">
         <a
-          href="tel:+381601234567"
+          href="tel:+38162277686"
           className="flex items-center text-[var(--primary)] transition hover:text-[var(--primary-dark)]"
           aria-label="Pozovite nas na telefon"
         >
@@ -371,7 +371,7 @@ function ContactInfo() {
           +381 60 123 4567
         </a>
         <a
-          href="mailto:info@projektikuce.com"
+          href="mailto:pojektovanjekuce@gmail.com"
           className="flex items-center text-[var(--primary)] transition hover:text-[var(--primary-dark)]"
           aria-label="Pošaljite nam email"
         >
