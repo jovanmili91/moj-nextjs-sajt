@@ -18,7 +18,7 @@ tags:
     'moderno',
   ]
 area: 180m²
-location: Beograd
+location: Paraćin
 featured: true
 # Slike za galeriju - dodajte putanje do slika vašeg projekta
 images:

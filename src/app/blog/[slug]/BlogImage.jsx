@@ -36,7 +36,10 @@ export function FeaturedImage({ src, alt, ...props }) {
       : `/${src || 'placeholders/low-res-image.webp'}`;
 
   return (
-    <div className="aspect-video relative mb-8 w-full overflow-hidden rounded-xl shadow-lg">
+    <div
+      className="aspect-video relative mb-8 w-full overflow-hidden rounded-xl shadow-lg"
+      style={{ minHeight: '400px' }}
+    >
       <Image
         src={imgSrc}
         alt={alt || 'Featured blog image'}

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getBlogBySlug, getBlogs, getLatestBlogs } from '../../../lib/getBlogs';
 import React from 'react';
+import { FeaturedImage } from './BlogImage';
 
 // Generate metadata dynamically
 export async function generateMetadata({ params }) {
@@ -442,17 +443,12 @@ export default async function BlogPostPage({ params }) {
                 tags={blog.tags}
               />
 
-              <div className="aspect-video relative mb-8 w-full overflow-hidden rounded-xl shadow-lg">
-                <Image
-                  src={blog.imageURL}
-                  alt={`${blog.title} - Blog o projektovanju kuća`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 800px"
-                  priority
-                  className="object-cover"
-                  quality={90}
-                />
-              </div>
+              <FeaturedImage
+                src={blog.imageURL}
+                alt={`${blog.title} - Blog o projektovanju kuća`}
+                quality={90}
+                priority
+              />
 
               <ShareLinks title={blog.title} slug={blog.slug} />
 

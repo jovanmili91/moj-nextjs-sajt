@@ -44,6 +44,7 @@ const nextConfig = {
     minimumCacheTTL: 7200,
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256],
+    unoptimized: process.env.NODE_ENV === 'development', // Omogućava lokalne slike u development modu
   },
 
   // HTTP zaglavlja za bezbednost i keširanje

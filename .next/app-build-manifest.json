@@ -3,8 +3,8 @@
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_api_image_js-_app-pages-browser_node_module-66412a.js",
-      "static/chunks/vendors-_app-pages-browser_node_modules_next_font_google_target_css_path_src_app_layout_js_im-346af5.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_api_image_js-_app-pages-browser_node_module-fe7f5e.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_font_google_target_css_path_src_app_layout_js_im-43ecd2.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
@@ -13,12 +13,11 @@
       "static/chunks/main-app.js",
       "static/chunks/app/loading.js"
     ],
-    "/page": [
+    "/blog/[slug]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_api_image_js-_app-pages-browser_node_module-66412a.js",
-      "static/chunks/vendors-_app-pages-browser_node_modules_framer-motion_dist_es_render_components_motion_proxy_mjs.js",
-      "static/chunks/app/page.js"
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_api_image_js-_app-pages-browser_node_module-fe7f5e.js",
+      "static/chunks/app/blog/[slug]/page.js"
     ]
   }
 }
