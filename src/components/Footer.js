@@ -137,7 +137,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <ContactItem Icon={FaPhoneAlt}>
                 <a href="tel:+38162277686" className="hover:text-white">
-                  +381 62 277 686
+                  +38162277686
                 </a>
               </ContactItem>
               <ContactItem Icon={FaEnvelope}>

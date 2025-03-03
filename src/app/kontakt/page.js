@@ -131,7 +131,7 @@ export default function Contact() {
                         href="tel:+3816277686"
                         className="mt-1 text-sm text-[var(--primary)] hover:underline"
                       >
-                        +381 62 277 686
+                        +38162277686
                       </a>
                     </div>
                   </div>
