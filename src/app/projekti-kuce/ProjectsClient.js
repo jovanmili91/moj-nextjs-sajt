@@ -36,6 +36,12 @@ const ProjectTag = ({ text }) => (
 
 // Project Card komponenta
 const ProjectCard = ({ project }) => {
+  // Funkcija za skraćivanje opisa
+  const truncateDescription = (text, maxLength = 100) => {
+    if (!text || text.length <= maxLength) return text;
+    return text.substring(0, maxLength) + '...';
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -70,20 +76,25 @@ const ProjectCard = ({ project }) => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
         </div>
-        <div className="flex flex-grow flex-col p-6">
-          <h2 className="mb-3 text-xl font-bold text-[var(--neutral-800)] transition-colors duration-300 group-hover:text-[var(--primary)]">
+        <div className="flex flex-grow flex-col p-4">
+          <h2 className="mb-2 line-clamp-1 text-lg font-bold text-[var(--neutral-800)] transition-colors duration-300 group-hover:text-[var(--primary)]">
             {project.title}
           </h2>
-          <p className="mb-4 flex-grow text-[var(--neutral-600)]">
-            {project.description}
+          <p className="mb-3 line-clamp-2 flex-grow text-sm text-[var(--neutral-600)]">
+            {truncateDescription(project.description, 100)}
           </p>
           <div className="mt-auto flex flex-wrap">
-            {project.tags?.map((tag, index) => (
-              <ProjectTag key={index} text={tag} />
+            {project.tags?.slice(0, 3).map((tag, index) => (
+              <span
+                key={index}
+                className="bg-[var(--primary)]/[0.1] mb-2 mr-2 inline-block rounded-full px-2 py-1 text-xs font-medium text-[var(--primary)]"
+              >
+                {tag}
+              </span>
             ))}
           </div>
-          <div className="mt-4 flex items-center justify-between">
-            <div className="flex items-center text-sm text-[var(--neutral-500)]">
+          <div className="mt-3 flex items-center justify-between">
+            <div className="flex items-center text-xs text-[var(--neutral-500)]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="mr-1 h-4 w-4"
@@ -112,7 +123,7 @@ const ProjectCard = ({ project }) => {
               </svg>
               {project.area}
             </div>
-            <span className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-white transition-colors duration-300 group-hover:bg-[var(--accent)]">
+            <span className="rounded-lg bg-[var(--primary)] px-3 py-1 text-xs font-medium text-white transition-colors duration-300 group-hover:bg-[var(--accent)]">
               Više detalja
             </span>
           </div>
@@ -199,6 +210,124 @@ export default function ProjectsClient() {
       projectsListRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, [currentPage]);
+
+  // Poboljšano rešenje za očuvanje skrol pozicije
+  useEffect(() => {
+    // Promenljiva koja pamti da li je navigacija izazvana klikom na karticu projekta
+    let isNavigatingToProject = false;
+
+    // 1. Čuvanje pozicije skrola prilikom klika na karticu projekta
+    const handleProjectClick = (e) => {
+      // Sačuvaj trenutnu poziciju skrola u sessionStorage
+      const scrollPosition = window.scrollY;
+      sessionStorage.setItem(
+        'projectsScrollPosition',
+        scrollPosition.toString()
+      );
+      isNavigatingToProject = true;
+    };
+
+    // 2. Dodavanje event listenera na sve linkove ka projektima
+    const addEventListenersToLinks = () => {
+      const projectLinks = document.querySelectorAll(
+        'a[href^="/projekti-kuce/"]'
+      );
+      projectLinks.forEach((link) => {
+        link.addEventListener('click', handleProjectClick);
+      });
+      return projectLinks; // vrati linkove za kasnije uklanjanje listenera
+    };
+
+    // Inicijalno dodaj listenere
+    const projectLinks = addEventListenersToLinks();
+
+    // 3. Funkcija za obnavljanje pozicije skrola
+    const restoreScrollPosition = () => {
+      const scrollPosition = sessionStorage.getItem('projectsScrollPosition');
+      if (scrollPosition !== null) {
+        // Dodaj mali timeout da sačeka da se DOM potpuno učita pre skrolovanja
+        setTimeout(() => {
+          window.scrollTo({
+            top: parseInt(scrollPosition),
+            behavior: 'instant', // Koristi 'instant' umesto 'smooth' za trenutno skrolovanje
+          });
+        }, 50);
+      }
+    };
+
+    // 4. Handler za popstate događaj (kad korisnik pritisne back/forward dugme)
+    const handlePopState = () => {
+      // Proveri da li smo na stranici sa projektima (možda dodatna provera za URL)
+      if (window.location.pathname === '/projekti-kuce') {
+        // Koristi setTimeout da bi dobili prednost nad Next.js-ovim skrol ponašanjem
+        setTimeout(restoreScrollPosition, 0);
+      }
+    };
+
+    // 5. Dodavanje listenera za popstate događaj
+    window.addEventListener('popstate', handlePopState);
+
+    // 6. Proveri da li je ova stranica učitana putem back/forward navigacije
+    if (performance && performance.navigation) {
+      const navType = performance.navigation.type;
+      // 2 je kod za navigaciju back/forward
+      if (navType === 2) {
+        restoreScrollPosition();
+      }
+    } else if (
+      performance &&
+      performance.getEntriesByType &&
+      performance.getEntriesByType('navigation').length
+    ) {
+      // Noviji API za navigaciju
+      const navEntry = performance.getEntriesByType('navigation')[0];
+      if (navEntry && navEntry.type === 'back_forward') {
+        restoreScrollPosition();
+      }
+    }
+
+    // 7. MutationObserver za DOM promene (za dinamički dodavanje linkova)
+    const observer = new MutationObserver((mutations) => {
+      // Ako su dodati novi linkovi u DOM, ažuriraj listenere
+      let shouldRefreshListeners = false;
+
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+          for (let i = 0; i < mutation.addedNodes.length; i++) {
+            const node = mutation.addedNodes[i];
+            if (
+              node.nodeType === 1 &&
+              (node.tagName === 'A' ||
+                node.querySelectorAll('a[href^="/projekti-kuce/"]').length > 0)
+            ) {
+              shouldRefreshListeners = true;
+              break;
+            }
+          }
+        }
+      });
+
+      if (shouldRefreshListeners) {
+        // Dodaj listenere na nove linkove
+        addEventListenersToLinks();
+      }
+    });
+
+    // Pokreni observer da prati izmene u DOM-u
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+
+    // Čišćenje event listenera i observera
+    return () => {
+      projectLinks.forEach((link) => {
+        link.removeEventListener('click', handleProjectClick);
+      });
+      window.removeEventListener('popstate', handlePopState);
+      observer.disconnect();
+    };
+  }, []); // Prazan dependency array da se izvrši samo jednom prilikom montiranja komponente
 
   // Filtriranje i sortiranje projekata
   const filteredProjects = useMemo(() => {

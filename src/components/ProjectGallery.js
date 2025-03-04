@@ -1,11 +1,37 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 const ProjectGallery = ({ images, projectTitle }) => {
   const [activeImage, setActiveImage] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
+  // Cleanup funkcija za resetovanje overflow-a kada se komponenta unmount-uje
+  useEffect(() => {
+    // Funkcija za resetovanje overflow-a
+    const resetOverflow = () => {
+      document.body.style.overflow = 'auto';
+    };
+
+    // Handler za popstate događaj
+    const handlePopState = () => {
+      resetOverflow();
+      // Eksplicitno postavi stanje lightbox-a na zatvoreno
+      if (isLightboxOpen) {
+        setIsLightboxOpen(false);
+      }
+    };
+
+    // Dodaj event listener
+    window.addEventListener('popstate', handlePopState);
+
+    // Cleanup funkcija
+    return () => {
+      resetOverflow(); // Resetuj overflow pri unmount-ovanju
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, [isLightboxOpen]);
 
   // Provera da li postoje slike
   if (!images || images.length === 0) {
@@ -30,7 +56,11 @@ const ProjectGallery = ({ images, projectTitle }) => {
 
   const closeLightbox = () => {
     setIsLightboxOpen(false);
-    document.body.style.overflow = 'auto'; // Vraća skrolovanje na stranicu
+    document.body.style.overflow = 'auto';
+    // Dodaj timeout da osiguraš da je overflow vraćen na 'auto'
+    setTimeout(() => {
+      document.body.style.overflow = 'auto';
+    }, 50);
   };
 
   const nextImage = () => {

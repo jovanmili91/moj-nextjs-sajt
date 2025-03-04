@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { Inter } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import OverflowResetManager from '@/components/OverflowResetManager';
 
 const inter = Inter({
   subsets: ['latin', 'latin-ext'],
@@ -111,6 +112,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="flex min-h-screen flex-col bg-[var(--background)] text-[var(--foreground)] antialiased">
+        <OverflowResetManager /> {/* Dodaj komponentu ovde */}
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
