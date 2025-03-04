@@ -369,6 +369,16 @@ export default function ProjectsClient() {
                 >
                   Eko kuće
                 </button>
+                <button
+                  onClick={() => handleFilterChange('stambene zgrade')}
+                  className={`rounded-full px-6 py-2 text-sm font-medium transition-all ${
+                    activeFilter === 'stambene zgrade'
+                      ? 'bg-[var(--primary)] text-white'
+                      : 'bg-[var(--neutral-200)] text-[var(--neutral-700)] hover:bg-[var(--neutral-300)]'
+                  }`}
+                >
+                  Stambene Zgrade
+                </button>
               </div>
               <select
                 onChange={handleSortChange}

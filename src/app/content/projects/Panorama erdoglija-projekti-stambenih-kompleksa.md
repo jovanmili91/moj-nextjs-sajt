@@ -17,6 +17,7 @@ tags:
     'Energetska efikasnost',
     'Luksuzni stanovi',
     'Investicija',
+    'stambene zgrade',
   ]
 area: 20 000m²
 location: Kragujevac, Erdoglija

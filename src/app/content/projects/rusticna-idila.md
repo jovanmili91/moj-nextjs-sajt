@@ -14,6 +14,7 @@ tags:
     'Udobnost',
     'Funkcionalnost',
     'Autentičnost',
+    'porodično',
   ]
 area: 120m²
 location: Paraćin

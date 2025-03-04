@@ -17,6 +17,7 @@ tags:
     'Energetska efikasnost',
     'Gradski ambijent',
     'Investicija',
+    'stambene zgrade',
   ]
 area: 6000m²
 location: Kragujevac
