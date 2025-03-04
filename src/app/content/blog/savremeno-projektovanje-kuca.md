@@ -43,13 +43,12 @@ Moderna projektna rešenja uključuju napredne izolacione materijale i tehnike z
 
 ### Pametni sistemi za upravljanje energijom
 
-```
 Energetski efikasno projektovanje kuće podrazumeva:
+
 - Toplotna izolacija visokih performansi
 - Energetski efikasna stolarija
 - Obnovljivi izvori energije
 - Pametni sistemi za upravljanje potrošnjom
-```
 
 ### Obnovljivi izvori energije
 
