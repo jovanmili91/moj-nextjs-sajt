@@ -2,7 +2,7 @@
 id: 1
 title: '5 savremenih trendova u projektovanju kuća koje morate znati'
 description: 'Otkrijte najnovije trendove u projektovanju kuća koji kombinuju estetiku, funkcionalnost i održivost za moderan životni prostor.'
-imageURL: '/images/blog/savremeno-projektovanje.webp'
+imageURL: '/images/blog/moderna-elegancija.webp'
 tags: ['Trendovi', 'Dizajn', 'Održivost']
 author: 'Marko Nikolić'
 publishedAt: '2023-08-15T09:00:00.000Z'
