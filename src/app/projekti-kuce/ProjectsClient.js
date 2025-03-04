@@ -5,6 +5,7 @@ import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 // Fallback projekti za slučaj greške
 const FALLBACK_PROJECTS = [
@@ -123,14 +124,39 @@ const ProjectCard = ({ project }) => {
 
 // Glavna klijentska komponenta
 export default function ProjectsClient() {
+  const router = useRouter(); // Dodajte ovo
+  const searchParams = useSearchParams(); // Dodajte ovo
+
   const [activeFilter, setActiveFilter] = useState('all');
   const [projects, setProjects] = useState([]);
   const [sortOrder, setSortOrder] = useState('newest');
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(() => {
+    const pageParam = searchParams.get('page');
+    return pageParam ? parseInt(pageParam) : 1;
+  });
   const projectsPerPage = 6;
   const projectsListRef = useRef(null);
+
+  const updatePageParam = useCallback((page) => {
+    const params = new URLSearchParams(window.location.search);
+    params.set('page', page);
+
+    window.history.replaceState(
+      null,
+      '',
+      `${window.location.pathname}?${params.toString()}`
+    );
+  }, []);
+
+  const changePage = useCallback(
+    (page) => {
+      setCurrentPage(page);
+      updatePageParam(page);
+    },
+    [updatePageParam]
+  );
 
   // Dohvatanje projekata
   useEffect(() => {
@@ -199,15 +225,21 @@ export default function ProjectsClient() {
     return filtered;
   }, [projects, activeFilter, sortOrder]);
 
-  const handleFilterChange = useCallback((filter) => {
-    setActiveFilter(filter);
-    setCurrentPage(1);
-  }, []);
+  const handleFilterChange = useCallback(
+    (filter) => {
+      setActiveFilter(filter);
+      changePage(1); // Umesto setCurrentPage(1)
+    },
+    [changePage]
+  );
 
-  const handleSortChange = useCallback((e) => {
-    setSortOrder(e.target.value);
-    setCurrentPage(1);
-  }, []);
+  const handleSortChange = useCallback(
+    (e) => {
+      setSortOrder(e.target.value);
+      changePage(1); // Umesto setCurrentPage(1)
+    },
+    [changePage]
+  );
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -390,9 +422,7 @@ export default function ProjectsClient() {
                   aria-label="Navigacija kroz stranice"
                 >
                   <button
-                    onClick={() =>
-                      setCurrentPage((prev) => Math.max(prev - 1, 1))
-                    }
+                    onClick={() => changePage(Math.max(currentPage - 1, 1))}
                     disabled={currentPage === 1}
                     className={`rounded-l-md border border-r-0 border-[var(--neutral-300)] bg-white px-4 py-2 text-sm font-medium ${
                       currentPage === 1
@@ -402,6 +432,7 @@ export default function ProjectsClient() {
                   >
                     Prethodna
                   </button>
+
                   {Array.from({
                     length: Math.ceil(
                       filteredProjects.length / projectsPerPage
@@ -409,7 +440,7 @@ export default function ProjectsClient() {
                   }).map((_, i) => (
                     <button
                       key={i}
-                      onClick={() => setCurrentPage(i + 1)}
+                      onClick={() => changePage(i + 1)}
                       className={`border border-[var(--neutral-300)] px-4 py-2 text-sm font-medium ${
                         currentPage === i + 1
                           ? 'bg-[var(--primary)]/[0.1] border-[var(--primary)] text-[var(--primary)]'
@@ -419,11 +450,12 @@ export default function ProjectsClient() {
                       {i + 1}
                     </button>
                   ))}
+
                   <button
                     onClick={() =>
-                      setCurrentPage((prev) =>
+                      changePage(
                         Math.min(
-                          prev + 1,
+                          currentPage + 1,
                           Math.ceil(filteredProjects.length / projectsPerPage)
                         )
                       )
