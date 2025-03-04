@@ -1,11 +1,7 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/api/blogs/route": "app/api/blogs/route.js",
   "/api/projects/route": "app/api/projects/route.js",
-  "/o-nama/page": "app/o-nama/page.js",
-  "/kontakt/page": "app/kontakt/page.js",
-  "/blog/page": "app/blog/page.js",
-  "/projekti-kuce/page": "app/projekti-kuce/page.js",
+  "/page": "app/page.js",
   "/projekti-kuce/[id]/page": "app/projekti-kuce/[id]/page.js",
-  "/page": "app/page.js"
+  "/projekti-kuce/page": "app/projekti-kuce/page.js"
 }
