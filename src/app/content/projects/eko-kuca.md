@@ -20,7 +20,7 @@ tags:
   ]
 area: 180m²
 location: Niš
-featured: true
+featured: false
 # Slike za galeriju - dodajte putanje do slika vašeg projekta
 images:
   - /images/eko-kuca/galerija-1.webp

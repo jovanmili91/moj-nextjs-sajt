@@ -249,7 +249,7 @@ export default function ProjectsClient() {
           <div className="absolute inset-0 overflow-hidden">
             <Image
               src="/images/projects-hero.webp"
-              alt="Projektovanje kuća - Naši Projekti"
+              alt="Projektovanje kuća - Naši Projekti Kuća"
               fill
               className="object-cover opacity-30"
               quality={85}
@@ -266,7 +266,7 @@ export default function ProjectsClient() {
             className="relative z-10 mx-auto max-w-7xl px-4 text-center"
           >
             <h1 className="mb-6 text-4xl font-extrabold text-white md:text-5xl lg:text-6xl">
-              Projektovanje Kuća - Naši Projekti
+              Projektovanje Kuća - Naši Projekti Kuća
             </h1>
             <p className="mx-auto max-w-3xl text-lg md:text-xl">
               Profesionalno projektovanje kuća koje spaja estetiku,
