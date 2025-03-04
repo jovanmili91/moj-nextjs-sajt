@@ -1,7 +1,7 @@
 // src/app/projekti-kuce/ProjectsClient.js
 'use client';
 
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -130,6 +130,7 @@ export default function ProjectsClient() {
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const projectsPerPage = 6;
+  const projectsListRef = useRef(null);
 
   // Dohvatanje projekata
   useEffect(() => {
@@ -166,6 +167,12 @@ export default function ProjectsClient() {
 
     fetchProjects();
   }, []);
+  // Dodajte ovaj novi useEffect nakon postojećih useEffect-ova:
+  useEffect(() => {
+    if (projectsListRef.current) {
+      projectsListRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [currentPage]);
 
   // Filtriranje i sortiranje projekata
   const filteredProjects = useMemo(() => {
@@ -356,7 +363,10 @@ export default function ProjectsClient() {
                 {error}
               </div>
             ) : (
-              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              <div
+                ref={projectsListRef}
+                className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+              >
                 {filteredProjects
                   .slice(
                     (currentPage - 1) * projectsPerPage,
