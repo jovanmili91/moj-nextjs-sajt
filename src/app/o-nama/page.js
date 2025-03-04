@@ -201,8 +201,8 @@ export default function AboutPage() {
                       'Svaki projekat kuće priča priču. Moj cilj je da vaš dom odražava vaš identitet i poštuje prirodno okruženje.',
                   },
                   {
-                    name: 'Marko Petrović',
-                    title: 'Arhitekta',
+                    name: 'Naš tim',
+                    title: 'Arhitekte i stručni saradnici',
                     image: '/images/placeholder-2.webp',
                     quote:
                       'Projektovanje zelenih kuća je budućnost. Pronalazim tehnička rešenja koja štede energiju i čuvaju planetu.',

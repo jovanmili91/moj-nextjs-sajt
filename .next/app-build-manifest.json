@@ -3,9 +3,10 @@
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_api_image_js-_app-pages-browser_node_module-fe7f5e.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_client_image-component_js.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_compiled_react_jsx-dev-runtime_js.js",
       "static/chunks/vendors-_app-pages-browser_node_modules_react-icons_fa_index_mjs.js",
-      "static/chunks/vendors-_app-pages-browser_node_modules_next_font_google_target_css_path_src_app_layout_js_im-346af5.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_api_image_js-_app-pages-browser_node_module-054bd3.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
@@ -14,19 +15,25 @@
       "static/chunks/main-app.js",
       "static/chunks/app/loading.js"
     ],
-    "/page": [
+    "/o-nama/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_api_image_js-_app-pages-browser_node_module-fe7f5e.js",
-      "static/chunks/vendors-_app-pages-browser_node_modules_react-icons_fa_index_mjs.js",
-      "static/chunks/vendors-_app-pages-browser_node_modules_framer-motion_dist_es_render_components_motion_proxy_mjs.js",
-      "static/chunks/app/page.js"
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_client_image-component_js.js",
+      "static/chunks/app/o-nama/page.js"
+    ],
+    "/kontakt/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_client_image-component_js.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_compiled_react_jsx-dev-runtime_js.js",
+      "static/chunks/app/kontakt/page.js"
     ],
     "/blog/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_api_image_js-_app-pages-browser_node_module-fe7f5e.js",
-      "static/chunks/vendors-_app-pages-browser_node_modules_framer-motion_dist_es_render_components_motion_proxy_mjs.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_client_image-component_js.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_compiled_react_jsx-dev-runtime_js.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_api_image_js-_app-pages-browser_node_module-e5ad67.js",
       "static/chunks/app/blog/page.js"
     ],
     "/api/blogs/route": [
@@ -34,11 +41,34 @@
       "static/chunks/main-app.js",
       "static/chunks/app/api/blogs/route.js"
     ],
-    "/blog/[slug]/page": [
+    "/projekti-kuce/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_api_image_js-_app-pages-browser_node_module-fe7f5e.js",
-      "static/chunks/app/blog/[slug]/page.js"
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_client_image-component_js.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_compiled_react_jsx-dev-runtime_js.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_api_image_js-_app-pages-browser_node_module-e5ad67.js",
+      "static/chunks/app/projekti-kuce/page.js"
+    ],
+    "/api/projects/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/projects/route.js"
+    ],
+    "/projekti-kuce/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_client_image-component_js.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_compiled_react_jsx-dev-runtime_js.js",
+      "static/chunks/app/projekti-kuce/[id]/page.js"
+    ],
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_client_image-component_js.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_compiled_react_jsx-dev-runtime_js.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_api_image_js-_app-pages-browser_node_module-e5ad67.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_react-icons_fa_index_mjs.js",
+      "static/chunks/app/page.js"
     ],
     "/_not-found/page": [
       "static/chunks/webpack.js",
