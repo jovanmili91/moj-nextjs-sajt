@@ -20,7 +20,7 @@ tags:
   ]
 area: 195m²
 location: Paraćin
-featured: true
+featured: false
 # Slike za galeriju - dodajte putanje do slika vašeg projekta
 images:
   - /images/harmonija-prirode/galerija-1.webp

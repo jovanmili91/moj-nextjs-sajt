@@ -1,5 +1,5 @@
 ---
-id: 4
+id: 12
 title: Rustična Idila | Projekti Kuća
 description: Projekat kuće u tradicionalnom stilu sa modernim komforom, savršeno integrisan u prirodno okruženje. Profesionalno projektovanje kuća koje spaja autentični arhitektonski stil i savremene potrebe, sa naglaskom na harmoniju sa okolinom. Idealan izbor za ljubitelje tradicionalne arhitekture koji traže kvalitetne projekte kuća.
 imageURL: /images/rusticna-idila.webp

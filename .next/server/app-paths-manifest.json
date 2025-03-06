@@ -1,6 +1,6 @@
 {
   "/api/projects/route": "app/api/projects/route.js",
   "/page": "app/page.js",
-  "/projekti-kuce/page": "app/projekti-kuce/page.js",
-  "/projekti-kuce/[id]/page": "app/projekti-kuce/[id]/page.js"
+  "/projekti-kuce/[id]/page": "app/projekti-kuce/[id]/page.js",
+  "/projekti-kuce/page": "app/projekti-kuce/page.js"
 }

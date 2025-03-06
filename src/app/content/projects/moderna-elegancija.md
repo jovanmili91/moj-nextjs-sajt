@@ -1,5 +1,5 @@
 ---
-id: 5
+id: 11
 title: Moderna Elegancija | Projekti Kuća
 description: Savremeni projekat kuće sa bazenom koji spaja minimalističku estetiku i vrhunski komfor. Profesionalno projektovanje kuća sa naglaskom na otvorene prostore, velike staklene površine i energetsku efikasnost. Idealno rešenje za moderan stil života koji traži luksuz, funkcionalnost i jedinstveni arhitektonski izraz.
 imageURL: /images/moderna-elegancija.webp
