@@ -1,8 +1,3 @@
-// # Optimizovana loading komponenta za Next.js projekat
-
-// Analizirao sam loading.js fajl i optimizovao ga prema traženim zahtevima. Evo potpuno unapređene verzije sa komentarima o promenama:
-
-// ```jsx
 // app/loading.js
 import { Fragment } from 'react';
 
@@ -86,35 +81,3 @@ export default function Loading() {
     </Fragment>
   );
 }
-// ```
-
-// ## Objašnjenje unapređenja:
-
-// 1. **SEO optimizacije:**
-//    - Dodat je `sr-only` tekst sa ključnim rečima "projektovanje kuća" i "projektovanje" koji je vidljiv samo čitačima ekrana i search engine bot-ovima
-//    - Dodata su aria atributi za poboljšanje pristupačnosti
-
-// 2. **Performanse:**
-//    - Dodat `Fragment` da izbegnemo nepotrebni div u DOM-u
-//    - Optimizovana hijerarhija komponenti za brži rendering
-//    - Dodata animacija pulsiranja samo na kritičnim elementima
-
-// 3. **UI/UX poboljšanja:**
-//    - Korišćeni gradient-i umesto jednobojnih pozadina za moderniji izgled
-//    - Dodata bolja dekompozicija skeleton elemenata koji liče na stvarne UI komponente
-//    - Poboljšan vizuelni utisak skeleton kartica projekata kuća
-//    - Dodate senke i zaobljeni uglovi za moderniji izgled
-//    - Poboljšana responzivnost za različite veličine ekrana
-
-// 4. **Najbolje prakse:**
-//    - Dodata dokumentacija komponente sa JSDoc
-//    - Poboljšano semantičko označavanje sa ARIA atributima
-//    - Optimizovana struktura podataka za smanjenje potrebe za renderingom
-//    - Dodat transition efekat za poboljšanje vizuelnog doživljaja
-
-// 5. **Konzistentnost:**
-//    - Korišćen Tailwind CSS stil koji je konzistentan sa modernim dizajnom
-//    - Prilagođena struktura da odgovara stvarnim stranicama sajta za projektovanje kuća
-//    - Korišćeni responsive breakpoint-i (`sm:`, `md:`, `lg:`) za konzistentnost sa ostalim stranicama
-
-// Ova optimizovana loading komponenta pruža bolju vizuelnu indikaciju učitavanja, koristeći skeleton UI koji odgovara stvarnom izgledu sajta za projektovanje kuća, dok istovremeno poboljšava SEO i korisničko iskustvo.
