@@ -1,5 +1,5 @@
 ---
-id: 10
+id: 3
 title: Vila Harmonia | Savremeni Porodični Dom
 description: Moderan i funkcionalan projekat porodične kuće koja spaja tradicionalne elemente sa savremenom estetikom. Sa elegantnom kombinacijom bele fasade i tamnih akcentnih detalja, ova jednospratnica sa potkrovljem nudi optimalno iskorišćen prostor za komforan porodični život. Prostrani dnevni boravak sa trpezarijom, funkcionalne spavaće sobe i pažljivo osmišljeno dvorište sa terasom čine ovaj dom idealnim za moderne porodice koje cene privatnost, funkcionalnost i estetiku.
 imageURL: /images/vila-harmonia.webp

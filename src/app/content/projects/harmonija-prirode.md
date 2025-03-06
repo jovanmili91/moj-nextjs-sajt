@@ -1,5 +1,5 @@
 ---
-id: 6
+id: 10
 title: Harmonija Prirode | Projekti Kuća
 description: Savršen spoj tradicionalne topline i savremene funkcionalnosti u ovom dvospratnom porodičnom domu. Projekat kuće nudi prostrane terase, elegantne staklene površine i pažljivo osmišljen prostor za moderan porodični život. Jedinstveno arhitektonsko rešenje sa vrhunskom energetskom efikasnošću i prirodnim materijalima idealno za urbano-suburbane lokacije.
 imageURL: /images/harmonija-prirode.webp

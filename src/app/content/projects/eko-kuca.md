@@ -1,5 +1,5 @@
 ---
-id: 3
+id: 6
 title: Eko Kuća - Projektovanje održivih porodičnih kuća | Projekat energetski efikasnog doma | Projekti Kuća
 description: Projekat održive porodične kuće sa solarnim panelima i A+ energetskom efikasnošću. Moderna ekološka kuća od prirodnih materijala sa minimalnim ekološkim otiskom. Idealno rešenje za održivu gradnju i zdravo stanovanje u Srbiji.
 imageURL: /images/eko-kuca.webp
