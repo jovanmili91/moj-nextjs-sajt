@@ -1,9 +1,8 @@
 {
   "/api/projects/route": "app/api/projects/route.js",
-  "/api/blogs/route": "app/api/blogs/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/projekti-kuce/page": "app/projekti-kuce/page.js",
+  "/kontakt/page": "app/kontakt/page.js",
   "/page": "app/page.js",
-  "/projekti-kuce/[id]/page": "app/projekti-kuce/[id]/page.js",
-  "/blog/page": "app/blog/page.js",
-  "/blog/[slug]/page": "app/blog/[slug]/page.js"
+  "/usluge/page": "app/usluge/page.js"
 }
