@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { getProjects } from '@/lib/getProjects';
 import BlogSection from '@/components/BlogSection';
 import FeaturesSection from '@/components/FeaturesSection';
+import { Button, ArrowLink } from '@/components/Button';
 
 export const metadata = {
   title:
@@ -69,48 +70,54 @@ export default async function Home() {
     <div className="flex min-h-screen flex-col">
       <main className="flex-grow">
         {/* Hero sekcija */}
-        <section className="relative flex h-[90vh] items-center justify-center bg-gradient-to-br from-[var(--primary-dark)] via-blue-700 to-[var(--accent)] text-white">
+        <section className="relative flex h-[90vh] items-center justify-center text-white">
           <div className="absolute inset-0 overflow-hidden">
             <Image
               src="/images/hero-image.webp"
               alt="Projektovanje kuća - Arhitektonski dizajn za savršen dom"
               fill
-              className="object-cover opacity-30"
+              className="object-cover brightness-75" // promenjeno sa opacity-30 na brightness-75
               quality={85}
               priority={true}
-              fetchPriority="high"
               sizes="100vw"
               placeholder="blur"
               blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzM0NTZjYyI+PC9yZWN0Pjwvc3ZnPg=="
             />
+            <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary-dark)] via-blue-700 to-[var(--accent)] opacity-80"></div>{' '}
+            {/* Dodat opacity-80 */}
           </div>
           <div className="container relative z-10 mx-auto max-w-6xl px-4 text-center">
-            <h1 className="mb-6 text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl">
+            <h1 className="text-shadow-lg mb-6 text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl">
+              {' '}
+              {/* Dodat text-shadow-lg */}
               Profesionalno Projektovanje Kuća
               <span className="mt-2 block">Za Moderan Način Života</span>
             </h1>
-            <p className="mx-auto mb-8 max-w-2xl text-lg md:text-xl lg:text-2xl">
+            <p className="text-shadow mx-auto mb-8 max-w-2xl text-lg md:text-xl lg:text-2xl">
+              {' '}
+              {/* Dodat text-shadow */}
               Ne gradimo samo kuće – projektujemo budućnost vašeg doma sa
               fokusom na funkcionalnost, održivost i estetiku.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <Link
+              <Button
                 href="/projekti-kuce"
-                className="rounded-full bg-[var(--primary)] px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[var(--primary-dark)]"
+                variant="secondary"
                 aria-label="Pogledajte naše projekte kuća"
               >
                 Pogledaj Projekte
-              </Link>
-              <Link
+              </Button>
+              <Button
                 href="/kontakt"
-                className="rounded-full border-2 border-white px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:bg-white hover:text-[var(--primary)]"
+                variant="outline"
                 aria-label="Započnite projektovanje vaše kuće"
               >
                 Započni Projektovanje
-              </Link>
+              </Button>
             </div>
           </div>
         </section>
+
         <section className="bg-[var(--background)] py-16 md:py-24">
           <div className="container mx-auto max-w-6xl px-4">
             <h2 className="mb-4 text-center text-3xl font-bold text-[var(--foreground)] md:text-4xl">
@@ -156,14 +163,13 @@ export default async function Home() {
                       {project.description ||
                         'Detaljan projekat kuće prilagođen modernom načinu života.'}
                     </p>
-                    <span className="mt-4 inline-block font-medium text-[var(--primary)]">
+                    <span className="mt-4 inline-flex items-center font-medium text-[var(--primary)] transition-all group-hover:translate-x-1">
                       Saznaj više
                       <svg
-                        className="ml-1 inline-block h-4 w-4"
+                        className="ml-1 h-4 w-4"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
                           strokeLinecap="round"
@@ -179,26 +185,12 @@ export default async function Home() {
             </div>
 
             <div className="mt-12 text-center">
-              <Link
+              <ArrowLink
                 href="/projekti-kuce"
-                className="inline-flex items-center rounded-full bg-[var(--primary)] px-6 py-3 text-lg font-semibold text-white transition-all duration-300 hover:bg-[var(--primary-dark)]"
+                className="text-lg font-semibold"
               >
-                <span>Naši Projekti Kuća</span>
-                <svg
-                  className="ml-2 h-5 w-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  ></path>
-                </svg>
-              </Link>
+                Naši Projekti Kuća
+              </ArrowLink>
             </div>
           </div>
         </section>
@@ -519,27 +511,25 @@ export default async function Home() {
         {/* CTA sekcija */}
         <section className="bg-gradient-to-r from-[var(--primary-dark)] to-[var(--accent)] py-16 text-white md:py-24">
           <div className="container mx-auto max-w-4xl px-4 text-center">
-            <h2 className="mb-6 text-3xl font-bold md:text-4xl">
+            <h2 className="text-shadow-sm mb-6 text-3xl font-bold md:text-4xl">
               Spremni za Projektovanje Vaše Kuće?
             </h2>
-            <p className="mx-auto mb-8 max-w-2xl text-lg md:text-xl">
+            <p className="text-shadow-sm mx-auto mb-8 max-w-2xl text-lg md:text-xl">
               Kontaktirajte nas danas za besplatnu konsultaciju. Započnite put
               ka vašem savršenom domu uz stručno vođenje našeg tima za
               projektovanje kuća.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <Link
+              <Button
                 href="/kontakt"
-                className="rounded-full bg-white px-8 py-4 text-lg font-semibold text-[var(--primary)] shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[var(--neutral-100)]"
+                variant="primary"
+                className="animate-pulse hover:animate-none"
               >
                 Zatražite Ponudu
-              </Link>
-              <Link
-                href="/projekti-kuce"
-                className="rounded-full border-2 border-white px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:bg-white/10"
-              >
+              </Button>
+              <Button href="/projekti-kuce" variant="outline">
                 Pregledajte Projekte
-              </Link>
+              </Button>
             </div>
           </div>
         </section>

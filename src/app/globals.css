@@ -150,3 +150,46 @@
     overflow: hidden;
   }
 }
+
+/* Dodajte ove klase u globals.css za bolje stilizovanje tekstova preko slika */
+
+@layer utilities {
+  /* Poboljšani text shadow za bolju čitljivost preko slika */
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Gradient overlay za bolji kontrast teksta na slikama */
+  .image-overlay-dark::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.7)
+    );
+    z-index: 1;
+  }
+
+  .image-overlay-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom right,
+      var(--primary-dark) 0%,
+      rgba(245, 158, 11, 0.85) 100%
+    );
+    z-index: 1;
+    opacity: 0.85;
+  }
+}

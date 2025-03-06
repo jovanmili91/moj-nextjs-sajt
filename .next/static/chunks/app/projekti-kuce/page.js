@@ -43,7 +43,7 @@ eval(__webpack_require__.ts("__webpack_require__.r(__webpack_exports__);\n/* har
 },
 /******/ __webpack_require__ => { // webpackRuntimeModules
 /******/ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-/******/ __webpack_require__.O(0, ["vendors-_app-pages-browser_node_modules_next_dist_api_image_js-_app-pages-browser_node_module-fe7f5e","vendors-_app-pages-browser_node_modules_framer-motion_dist_es_render_components_motion_proxy_mjs","main-app"], () => (__webpack_exec__("(app-pages-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22C%3A%5C%5CUsers%5C%5Cjovan%5C%5Cprojektikuce-novi%5C%5Csrc%5C%5Capp%5C%5Cprojekti-kuce%5C%5CProjectsClient.js%22%2C%22ids%22%3A%5B%22default%22%5D%7D&server=false!")));
+/******/ __webpack_require__.O(0, ["vendors-_app-pages-browser_node_modules_next_dist_client_image-component_js-_app-pages-browse-716679","vendors-_app-pages-browser_node_modules_next_dist_api_image_js-_app-pages-browser_node_module-e5ad67","main-app"], () => (__webpack_exec__("(app-pages-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-client-entry-loader.js?modules=%7B%22request%22%3A%22C%3A%5C%5CUsers%5C%5Cjovan%5C%5Cprojektikuce-novi%5C%5Csrc%5C%5Capp%5C%5Cprojekti-kuce%5C%5CProjectsClient.js%22%2C%22ids%22%3A%5B%22default%22%5D%7D&server=false!")));
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ _N_E = __webpack_exports__;
 /******/ }

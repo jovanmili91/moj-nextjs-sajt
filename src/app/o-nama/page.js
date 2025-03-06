@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Button, ArrowLink } from '@/components/Button';
+import ResponsiveHero from '@/components/ResponsiveHero';
 
 // Metadata za SEO
 export const metadata = {
@@ -62,17 +64,17 @@ export default function AboutPage() {
     description:
       'Stručnjaci za projektovanje kuća koji spajaju inovativni dizajn, održivost i funkcionalnost za savršene domove.',
     url: 'https://www.projektikuce.rs/o-nama',
-    telephone: '+38111000000', // Promeni na stvaran broj
+    telephone: '+38162277686',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Vojvode Mišića 33/A-4', // Promeni na stvarnu adresu
+      streetAddress: 'Vojvode Mišića 33/A-4',
       addressLocality: 'Paraćin',
       postalCode: '35250',
       addressCountry: 'RS',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: '43.8667', // Promeni na stvarne koordinate
+      latitude: '43.8667',
       longitude: '21.4000',
     },
     openingHoursSpecification: {
@@ -82,7 +84,7 @@ export default function AboutPage() {
       closes: '17:00',
     },
     sameAs: [
-      'https://www.facebook.com/projektikuce', // Promeni na stvarne linkove
+      'https://www.facebook.com/projektikuce',
       'https://www.instagram.com/projektikuce',
     ],
     image: ['https://www.projektikuce.rs/images/about-hero.webp'],
@@ -102,6 +104,26 @@ export default function AboutPage() {
     },
   };
 
+  // Breadcrumbs strukturirani podaci za bolji SEO
+  const breadcrumbsStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Početna',
+        item: 'https://www.projektikuce.rs',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'O Nama',
+        item: 'https://www.projektikuce.rs/o-nama',
+      },
+    ],
+  };
+
   return (
     <>
       {/* Strukturirani podaci za SEO */}
@@ -111,50 +133,38 @@ export default function AboutPage() {
           __html: JSON.stringify(structuredData),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbsStructuredData),
+        }}
+      />
       <div className="flex min-h-screen flex-col bg-[var(--background)]">
         <main className="flex-grow">
-          {/* Hero Section */}
-          <section
-            className="relative py-24 text-white lg:py-32"
-            aria-label="Ko smo mi"
+          {/* Hero Section sa ResponsiveHero komponentom */}
+          <ResponsiveHero
+            mobileImage="/images/about-hero.webp" // Ako nemate posebnu mobilnu verziju, koristite istu sliku
+            desktopImage="/images/about-hero.webp"
+            alt="Tim za projektovanje kuća"
+            title="Stručnjaci za Projektovanje Vašeg Doma"
+            subtitle="U našem studiju, svaki projekat kuće je priča - o vama, vašim potrebama i vrednostima koje delimo. Mi smo tim koji vaše ideje pretvara u funkcionalni i održivi dom."
           >
-            <div className="absolute inset-0 overflow-hidden">
-              <Image
-                src="/images/about-hero.webp"
-                alt="Tim za projektovanje kuća"
-                fill
-                className="object-cover object-center opacity-30"
-                quality={90}
-                priority
-                sizes="100vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary-dark)] to-[var(--accent)]"></div>
-            </div>
-            <div className="relative z-10 mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-              <h1 className="mb-6 text-4xl font-extrabold text-white md:text-5xl lg:text-6xl">
-                Stručnjaci za Projektovanje Vašeg Doma
-              </h1>
-              <p className="mx-auto max-w-3xl text-lg text-white/90 md:text-xl">
-                U našem studiju, svaki projekat kuće je priča - o vama, vašim
-                potrebama i vrednostima koje delimo. Mi smo tim koji vaše ideje
-                pretvara u funkcionalni i održivi dom.
-              </p>
-              <div className="mt-10">
-                <Link
-                  href="#tim"
-                  className="focus:ring-[var(--primary)]/50 rounded-full bg-white px-8 py-4 text-lg font-semibold text-[var(--primary)] shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[var(--neutral-50)] hover:shadow-xl focus:outline-none focus:ring-2"
-                  aria-label="Saznaj više o našem timu"
-                >
-                  Upoznaj Naš Tim
-                </Link>
-              </div>
-            </div>
-          </section>
+            <Button
+              href="#tim"
+              variant="primary"
+              aria-label="Saznaj više o našem timu"
+            >
+              Upoznaj Naš Tim
+            </Button>
+          </ResponsiveHero>
 
           {/* Mission & Vision Section */}
-          <section className="bg-white py-24" aria-label="Misija i vizija">
+          <section
+            className="bg-white py-16 md:py-24"
+            aria-label="Misija i vizija"
+          >
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div className="grid gap-12 md:grid-cols-2">
+              <div className="grid gap-8 md:grid-cols-2 md:gap-12">
                 <div className="rounded-2xl bg-[var(--neutral-50)] p-8 shadow-md transition-transform duration-300 hover:translate-y-[-5px] hover:shadow-lg">
                   <h2 className="mb-6 text-3xl font-bold text-[var(--neutral-800)] after:mt-4 after:block after:h-1 after:w-16 after:bg-[var(--primary)] md:text-4xl">
                     Naša Misija
@@ -184,14 +194,14 @@ export default function AboutPage() {
           {/* Team Section */}
           <section
             id="tim"
-            className="bg-[var(--neutral-100)] py-24"
+            className="bg-[var(--neutral-100)] py-16 md:py-24"
             aria-label="Naš tim"
           >
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <h2 className="mb-16 text-center text-3xl font-bold text-[var(--neutral-800)] after:mx-auto after:mt-4 after:block after:h-1 after:w-24 after:bg-[var(--primary)] md:text-4xl">
+              <h2 className="mb-12 text-center text-3xl font-bold text-[var(--neutral-800)] after:mx-auto after:mt-4 after:block after:h-1 after:w-24 after:bg-[var(--primary)] md:mb-16 md:text-4xl">
                 Srce Našeg Tima
               </h2>
-              <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3">
                 {[
                   {
                     name: 'Branko Milivojević',
@@ -219,15 +229,17 @@ export default function AboutPage() {
                     key={index}
                     className="group flex flex-col items-center rounded-xl bg-white p-6 shadow-md transition-all duration-300 hover:shadow-lg"
                   >
-                    <div className="relative mb-6 h-64 w-64 overflow-hidden rounded-full shadow-md">
+                    <div className="relative mb-6 h-56 w-56 overflow-hidden rounded-full shadow-md md:h-64 md:w-64">
                       <Image
                         src={member.image}
                         alt={`${member.name} - ${member.title} za projektovanje kuća`}
                         fill
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        sizes="(max-width: 640px) 224px, (max-width: 1024px) 256px, 256px"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                         quality={85}
-                        loading="lazy"
+                        loading={index === 0 ? 'eager' : 'lazy'}
+                        placeholder="blur"
+                        blurDataURL="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIj48Y2lyY2xlIGN4PSIyMDAiIGN5PSIyMDAiIHI9IjIwMCIgZmlsbD0iI2U1ZTdlYiI+PC9jaXJjbGU+PC9zdmc+"
                       />
                     </div>
                     <h3 className="text-2xl font-semibold text-[var(--neutral-800)]">
@@ -246,13 +258,13 @@ export default function AboutPage() {
           </section>
 
           {/* Story Section */}
-          <section className="bg-white py-24" aria-label="Naša priča">
+          <section className="bg-white py-16 md:py-24" aria-label="Naša priča">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <h2 className="mb-16 text-center text-3xl font-bold text-[var(--neutral-800)] after:mx-auto after:mt-4 after:block after:h-1 after:w-24 after:bg-[var(--accent)] md:text-4xl">
+              <h2 className="mb-12 text-center text-3xl font-bold text-[var(--neutral-800)] after:mx-auto after:mt-4 after:block after:h-1 after:w-24 after:bg-[var(--accent)] md:mb-16 md:text-4xl">
                 Naš Put u Projektovanju Kuća
               </h2>
-              <div className="grid items-center gap-12 md:grid-cols-2">
-                <div className="aspect-h-9 aspect-w-16 relative h-0 overflow-hidden rounded-xl pb-[56.25%] shadow-lg">
+              <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12">
+                <div className="aspect-h-9 aspect-w-16 relative overflow-hidden rounded-xl shadow-lg">
                   <iframe
                     src="https://www.youtube.com/embed/38vK64FNbBI"
                     title="Naša Priča - Projektovanje Kuća"
@@ -280,26 +292,12 @@ export default function AboutPage() {
                     inovacijama.
                   </p>
                   <div className="pt-4">
-                    <Link
+                    <ArrowLink
                       href="/projekti-kuce"
-                      className="inline-flex items-center font-semibold text-[var(--primary)] transition-colors hover:text-[var(--primary-dark)]"
                       aria-label="Pogledaj naše projekte kuća"
                     >
                       Pogledaj naše projekte
-                      <svg
-                        className="ml-2 h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        />
-                      </svg>
-                    </Link>
+                    </ArrowLink>
                   </div>
                 </div>
               </div>
@@ -307,23 +305,26 @@ export default function AboutPage() {
           </section>
 
           {/* CTA Section */}
-          <section className="relative py-20" aria-label="Kontaktirajte nas">
+          <section
+            className="relative py-16 md:py-20"
+            aria-label="Kontaktirajte nas"
+          >
             <div className="absolute inset-0 bg-gradient-to-r from-[var(--primary-dark)] to-[var(--accent)]"></div>
             <div className="relative z-10 mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-              <h2 className="mb-6 text-3xl font-bold text-white md:text-4xl">
+              <h2 className="text-shadow-sm mb-6 text-3xl font-bold text-white md:text-4xl">
                 Spremni za Projektovanje Vaše Kuće?
               </h2>
-              <p className="mx-auto mb-10 max-w-2xl text-lg text-white/90 md:text-xl">
+              <p className="text-shadow-sm mx-auto mb-10 max-w-2xl text-lg text-white md:text-xl">
                 Zajedno možemo stvoriti dom koji odražava vaš stil života i
                 vrednosti - kontaktirajte našu stručnu ekipu danas!
               </p>
-              <Link
+              <Button
                 href="/kontakt"
-                className="inline-block rounded-full bg-white px-8 py-4 text-lg font-semibold text-[var(--primary)] shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[var(--neutral-50)] hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white/50"
+                variant="primary"
                 aria-label="Kontaktirajte nas za projektovanje vaše kuće"
               >
                 Započni Projekat Svoje Kuće
-              </Link>
+              </Button>
             </div>
           </section>
         </main>

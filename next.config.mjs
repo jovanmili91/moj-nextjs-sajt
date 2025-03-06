@@ -30,7 +30,10 @@ const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'], // Dodata podrška za .md i .mdx
 
-  // Optimizacija slika
+  // optimizeFonts opcija je uklonjena jer nije podržana u Next.js 15.2.0
+  // Font optimizacija se sada konfiguriše kroz next/font module
+
+  // UNAPREĐENA Optimizacija slika
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'www.projektikuce.com' },
@@ -41,10 +44,13 @@ const nextConfig = {
       { protocol: 'https', hostname: 'res.cloudinary.com' },
     ],
     formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 7200,
+    minimumCacheTTL: 60 * 60 * 24 * 7, // Povećano na 7 dana za postojane slike
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256],
     unoptimized: process.env.NODE_ENV === 'development', // Omogućava lokalne slike u development modu
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 
   // HTTP zaglavlja za bezbednost i keširanje
@@ -101,7 +107,7 @@ const nextConfig = {
   // Paketi koji zahtevaju transpilaciju
   transpilePackages: ['lodash-es', 'react-markdown'],
 
-  // Eksperimentalne funkcionalnosti
+  // UNAPREĐENE Eksperimentalne funkcionalnosti
   experimental: {
     serverActions: {
       allowedOrigins: ['localhost', 'projektikuce.com', 'www.projektikuce.com'],
@@ -129,6 +135,12 @@ const nextConfig = {
       {
         source: '/blog/:slug/',
         destination: '/blog/:slug',
+        permanent: true,
+      },
+      // NOVO: Dodato preusmeravanje za stare URL-ove sa pogrešnim imenima
+      {
+        source: '/projekti/:slug',
+        destination: '/projekti-kuce/:slug',
         permanent: true,
       },
     ];

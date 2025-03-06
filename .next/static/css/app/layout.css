@@ -1652,9 +1652,6 @@ select {
 .aspect-\[4\/3\] {
   aspect-ratio: 4/3;
 }
-.h-0 {
-  height: 0px;
-}
 .h-1 {
   height: 0.25rem;
 }
@@ -1693,6 +1690,9 @@ select {
 }
 .h-52 {
   height: 13rem;
+}
+.h-56 {
+  height: 14rem;
 }
 .h-6 {
   height: 1.5rem;
@@ -1751,6 +1751,9 @@ select {
 .min-h-\[500px\] {
   min-height: 500px;
 }
+.min-h-\[60vh\] {
+  min-height: 60vh;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1789,6 +1792,9 @@ select {
 }
 .w-5 {
   width: 1.25rem;
+}
+.w-56 {
+  width: 14rem;
 }
 .w-6 {
   width: 1.5rem;
@@ -2148,6 +2154,10 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
 }
+.bg-gray-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
+}
 .bg-gray-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
@@ -2400,9 +2410,6 @@ select {
 .pb-2 {
   padding-bottom: 0.5rem;
 }
-.pb-\[56\.25\%\] {
-  padding-bottom: 56.25%;
-}
 .pl-4 {
   padding-left: 1rem;
 }
@@ -2612,6 +2619,9 @@ select {
 .opacity-75 {
   opacity: 0.75;
 }
+.opacity-80 {
+  opacity: 0.8;
+}
 .shadow-2xl {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
@@ -2642,6 +2652,9 @@ select {
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+.outline {
+  outline-style: solid;
+}
 .ring-2 {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
@@ -2657,6 +2670,10 @@ select {
 }
 .blur {
   --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.brightness-75 {
+  --tw-brightness: brightness(.75);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .filter {
@@ -2725,6 +2742,19 @@ select {
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+/* Poboljšani text shadow za bolju čitljivost preko slika */
+.text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+.text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+.text-shadow-lg {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  }
+/* Gradient overlay za bolji kontrast teksta na slikama */
+
+/* Dodajte ove klase u globals.css za bolje stilizovanje tekstova preko slika */
 
 .after\:mx-auto::after {
   content: var(--tw-content);
@@ -2801,6 +2831,10 @@ select {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
+  .hover\:animate-none:hover {
+    animation: none;
+  }
+
   .hover\:bg-\[\#0090db\]:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(0 144 219 / var(--tw-bg-opacity, 1));
@@ -2844,6 +2878,11 @@ select {
     background-color: var(--primary-dark);
   }
 
+  .hover\:bg-amber-600:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(217 119 6 / var(--tw-bg-opacity, 1));
+  }
+
   .hover\:bg-blue-50:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(239 246 255 / var(--tw-bg-opacity, 1));
@@ -2862,11 +2901,6 @@ select {
   .hover\:bg-primary-dark:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(55 48 163 / var(--tw-bg-opacity, 1));
-  }
-
-  .hover\:bg-white:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
   }
 
   .hover\:bg-white\/10:hover {
@@ -2977,6 +3011,11 @@ select {
 }
 
 @media (hover: hover) and (pointer: fine) {
+
+  .group:hover .group-hover\:translate-x-1 {
+    --tw-translate-x: 0.25rem;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
 
   .group:hover .group-hover\:translate-y-0 {
     --tw-translate-y: 0px;
@@ -3098,6 +3137,10 @@ select {
     justify-content: center;
   }
 
+  .sm\:gap-10 {
+    gap: 2.5rem;
+  }
+
   .sm\:space-x-4 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-x-reverse: 0;
     margin-right: calc(1rem * var(--tw-space-x-reverse));
@@ -3151,6 +3194,10 @@ select {
     margin-bottom: 0px;
   }
 
+  .md\:mb-16 {
+    margin-bottom: 4rem;
+  }
+
   .md\:mt-0 {
     margin-top: 0px;
   }
@@ -3171,8 +3218,16 @@ select {
     height: 12rem;
   }
 
+  .md\:h-64 {
+    height: 16rem;
+  }
+
   .md\:w-1\/2 {
     width: 50%;
+  }
+
+  .md\:w-64 {
+    width: 16rem;
   }
 
   .md\:grid-cols-2 {
@@ -3197,6 +3252,10 @@ select {
 
   .md\:justify-between {
     justify-content: space-between;
+  }
+
+  .md\:gap-12 {
+    gap: 3rem;
   }
 
   .md\:gap-4 {
@@ -3285,6 +3344,10 @@ select {
 
   .lg\:col-span-2 {
     grid-column: span 2 / span 2;
+  }
+
+  .lg\:min-h-\[80vh\] {
+    min-height: 80vh;
   }
 
   .lg\:grid-cols-3 {
