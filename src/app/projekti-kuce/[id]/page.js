@@ -328,7 +328,7 @@ function DesignServices() {
       </ul>
       <div className="mt-6">
         <Link
-          href="/usluge/projektovanje"
+          href="/usluge/"
           className="inline-block w-full rounded-lg bg-[var(--primary)] px-4 py-3 text-center font-medium text-white transition-all hover:bg-[var(--primary-dark)]"
         >
           Detaljnije o projektovanju
