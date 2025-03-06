@@ -1814,6 +1814,9 @@ select {
 .w-full {
   width: 100%;
 }
+.w-\[150px\] {
+  width: 150px;
+}
 .max-w-2xl {
   max-width: 42rem;
 }

@@ -18,7 +18,6 @@ export async function getBlogs() {
       console.error('Kreiranje direktorijuma...');
       try {
         await fs.mkdir(BLOG_DIR, { recursive: true });
-        console.log(`Kreiran direktorijum: ${BLOG_DIR}`);
         return []; // Vrati prazan niz jer nemamo blogove još uvek
       } catch (mkdirError) {
         console.error('Greška pri kreiranju direktorijuma:', mkdirError);
@@ -40,7 +39,6 @@ export async function getBlogs() {
         const slug = filename.replace(/\.(md|mdx)$/, '');
 
         // Debugging frontmatter-a
-        console.log(`Processing file: ${filename}, Frontmatter:`, data);
 
         // Kreiranje kompletnog blog objekta
         return {
@@ -66,7 +64,6 @@ export async function getBlogs() {
     const blogs = await Promise.all(blogsPromises);
 
     // Logovanje pronađenih blogova za debugging
-    console.log(`Pronađeno ${blogs.length} blog postova u ${BLOG_DIR}`);
     blogs.forEach((blog) => {});
 
     // Sortiranje blogova po datumu objave (od najnovijeg ka najstarijem)
@@ -99,15 +96,11 @@ export async function getBlogBySlug(slug) {
     const blogs = await getBlogs();
     // Uklanjanje eventualnog trailing slash iz slug-a
     const normalizedSlug = slug.replace(/\/$/, '');
-    console.log(`Tražim blog sa slug-om: "${normalizedSlug}"`);
 
     const blog = blogs.find((blog) => blog.slug === normalizedSlug);
 
     if (blog) {
-      console.log(`Pronađen blog: ${blog.title}`);
     } else {
-      console.log(`Blog sa slug-om "${normalizedSlug}" nije pronađen.`);
-      console.log(`Dostupni slugovi: ${blogs.map((b) => b.slug).join(', ')}`);
     }
 
     return blog || null;

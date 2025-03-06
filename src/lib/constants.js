@@ -7,4 +7,3 @@ export const PATHS = {
   PROJECTS_DIR: path.join(process.cwd(), 'src/app/content/projects'),
   IMAGES_DIR: path.join(process.cwd(), 'public/images'),
 };
-console.log('BLOG_DIR:', PATHS.BLOG_DIR); // Dodaj ovo u constants.js

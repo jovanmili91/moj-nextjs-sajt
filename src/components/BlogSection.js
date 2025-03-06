@@ -18,8 +18,6 @@ function BlogCard({ blog }) {
   const defaultImage = '/placeholders/low-res-image.webp';
   const imageUrl = blog?.imageURL || defaultImage;
 
-  console.log(`Blog: ${blog.title}, Image URL: ${imageUrl}`); // Debugging
-
   return (
     <div className="flex flex-col overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
       <Link href={`/blog/${blog.slug}`} className="group">
@@ -93,12 +91,9 @@ export default async function BlogSection() {
   // Dohvati blogove - prvo pokušaj featured, ako nema koristi latest
   let blogs = await getFeaturedBlogs();
 
-  console.log('Featured blogs count:', blogs?.length || 0); // Debugging
-
   // Ako nema featured blogova ili ih ima manje od 3, dopuni sa latest
   if (!blogs || blogs.length < 3) {
     const latestBlogs = await getLatestBlogs(3);
-    console.log('Latest blogs count:', latestBlogs?.length || 0); // Debugging
 
     // Ako već imamo neke featured blogove, dopuni ih sa latest do ukupno 3
     if (blogs && blogs.length > 0) {
@@ -121,8 +116,6 @@ export default async function BlogSection() {
     console.log('No blogs found to display in BlogSection'); // Debugging
     return null;
   }
-
-  console.log('Displaying blogs:', blogs.map((b) => b.title).join(', ')); // Debugging
 
   return (
     <section className="bg-[var(--neutral-50)] py-16 md:py-24">

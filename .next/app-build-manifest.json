@@ -14,12 +14,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/loading.js"
     ],
-    "/o-nama/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_client_image-component_js-_app-pages-browse-716679.js",
-      "static/chunks/app/o-nama/page.js"
-    ],
     "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -27,6 +21,24 @@
       "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_api_image_js-_app-pages-browser_node_module-e5ad67.js",
       "static/chunks/vendors-_app-pages-browser_node_modules_react-icons_fa_index_mjs.js",
       "static/chunks/app/page.js"
+    ],
+    "/o-nama/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_client_image-component_js-_app-pages-browse-716679.js",
+      "static/chunks/app/o-nama/page.js"
+    ],
+    "/blog/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_client_image-component_js-_app-pages-browse-716679.js",
+      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_api_image_js-_app-pages-browser_node_module-e5ad67.js",
+      "static/chunks/app/blog/page.js"
+    ],
+    "/api/blogs/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/blogs/route.js"
     ],
     "/projekti-kuce/page": [
       "static/chunks/webpack.js",
@@ -40,17 +52,11 @@
       "static/chunks/main-app.js",
       "static/chunks/app/api/projects/route.js"
     ],
-    "/blog/page": [
+    "/kontakt/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_client_image-component_js-_app-pages-browse-716679.js",
-      "static/chunks/vendors-_app-pages-browser_node_modules_next_dist_api_image_js-_app-pages-browser_node_module-e5ad67.js",
-      "static/chunks/app/blog/page.js"
-    ],
-    "/api/blogs/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/blogs/route.js"
+      "static/chunks/app/kontakt/page.js"
     ]
   }
 }

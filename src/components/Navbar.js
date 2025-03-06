@@ -62,9 +62,10 @@ const Navbar = () => {
           <Image
             src="/images/logo.webp"
             alt="Projekti Kuća Logo - projektovanje kuća"
-            width={40}
-            height={40}
-            className="mr-2 h-auto"
+            width={0}
+            height={0}
+            className="h-auto w-[150px]" // Obe dimenzije moraju biti definisane
+            style={{ width: 'auto', height: '40px' }} // Alternativno kao style
             priority
           />
           <span>Projekti Kuća</span>
