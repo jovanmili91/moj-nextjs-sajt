@@ -1,9 +1,0 @@
-{
-  "/api/blogs/route": "app/api/blogs/route.js",
-  "/api/projects/route": "app/api/projects/route.js",
-  "/page": "app/page.js",
-  "/kontakt/page": "app/kontakt/page.js",
-  "/o-nama/page": "app/o-nama/page.js",
-  "/blog/page": "app/blog/page.js",
-  "/projekti-kuce/page": "app/projekti-kuce/page.js"
-}
