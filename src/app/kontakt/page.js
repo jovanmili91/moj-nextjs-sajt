@@ -101,10 +101,10 @@ export default function Contact() {
                         Email
                       </p>
                       <a
-                        href="mailto:projektovanjekuce@gmail.com"
+                        href="mailto:jovancadart@gmail.com"
                         className="mt-1 text-sm text-[var(--primary)] hover:underline"
                       >
-                        projektovanjekuce@gmail.com
+                        jovancadart@gmail.com
                       </a>
                     </div>
                   </div>

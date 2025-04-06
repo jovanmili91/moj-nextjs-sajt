@@ -142,10 +142,10 @@ const Footer = () => {
               </ContactItem>
               <ContactItem Icon={FaEnvelope}>
                 <a
-                  href="mailto:projektovanjekuce@gmail.com"
+                  href="mailto:jovancadart@gmail.com"
                   className="hover:text-white"
                 >
-                  projektovanjekuce@gmail.com
+                  jovancadart@gmail.com
                 </a>
               </ContactItem>
               <ContactItem Icon={FaMapMarkerAlt}>
