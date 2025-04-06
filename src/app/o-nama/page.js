@@ -278,9 +278,9 @@ export default function AboutPage() {
                 <div className="flex flex-col space-y-6">
                   <p className="text-lg leading-relaxed text-[var(--neutral-700)]">
                     Naše putovanje u svetu projektovanja kuća započelo je pre
-                    pet godina sa malim timom i velikim idejama. Ana je
-                    razvijala inovativne nacrte, Marko je implementirao ekološka
-                    rešenja za smanjenje energetskog otiska, a Jelena je
+                    deset godina sa malim timom i velikim idejama. Jovan je
+                    razvio inovativna resenja, Branko je implementirao ekološka
+                    rešenja za smanjenje energetskog otiska, a Dijana je
                     osiguravala da svaki prostor savršeno balansira formu i
                     funkciju.
                   </p>
