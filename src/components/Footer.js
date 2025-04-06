@@ -150,7 +150,7 @@ const Footer = () => {
               </ContactItem>
               <ContactItem Icon={FaMapMarkerAlt}>
                 <address className="inline not-italic">
-                  Vojvode Mišića 33/A, Paraćin
+                  Vojvode Mišića 21, lokal 5, Paraćin
                 </address>
               </ContactItem>
             </ul>
