@@ -161,7 +161,7 @@ export default function Contact() {
                         Adresa
                       </p>
                       <p className="mt-1 text-sm text-[var(--neutral-600)]">
-                        Vojvode Mišića 33/A-4, 35250 Paraćin
+                        Vojvode Mišića 21, lokal 5, 35250 Paraćin
                       </p>
                     </div>
                   </div>

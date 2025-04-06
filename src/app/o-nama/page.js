@@ -67,7 +67,7 @@ export default function AboutPage() {
     telephone: '+38162277686',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Vojvode Mišića 33/A-4',
+      streetAddress: 'Vojvode Mišića 21, lokal 5',
       addressLocality: 'Paraćin',
       postalCode: '35250',
       addressCountry: 'RS',
