@@ -26,6 +26,7 @@ images:
   - /images/zgrada-paracin-best/galerija-2.webp
   - /images/zgrada-paracin-best/galerija-3.webp
   - /images/zgrada-paracin-best/galerija-4.webp
+  - /images/zgrada-paracin-best/galerija-5.webp
 size: 500m²
 floors: 3
 bedrooms: 2-3
