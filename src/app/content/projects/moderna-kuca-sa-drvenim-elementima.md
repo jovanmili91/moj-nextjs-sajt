@@ -1,6 +1,6 @@
 ---
 id: 16
-title: Moderna Kuća sa Drvenim Elementima - Projektovanje savremenih porodičnih kuća | Spoj elegancije i prirode | Projekti Kuća
+title: Moderna Kuća sa Drvenim Elementima
 description: Projekat moderne dvospratne kuće površine 200m² sa drvenim detaljima i velikim terasama. Harmoničan spoj savremene arhitekture i prirodnih materijala za udoban porodični život u zelenom okruženju.
 imageURL: /images/moderna-kuca-drvo.webp
 tags:
