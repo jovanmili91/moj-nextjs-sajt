@@ -49,7 +49,7 @@ features:
   - Električni punjači za vozila u garaži
   - Pametne instalacije i sigurnosni sistemi
   - Dizajnerski uređen ulazni hol i komunikacije
-completionYear: 2020
+completionYear: 2025
 price: kontakt €/m²
 ---
 

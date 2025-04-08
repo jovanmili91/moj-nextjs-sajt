@@ -1,12 +1,11 @@
 ---
 id: 14
-title: Stambena zgrada Paraćin - Projektovanje modernih stambenih zgrada | Projekat višespratnice | Projekti Kuća
-description: Projekat moderne stambene zgrade u centru Paraćina, u ulici Todora od Stalaca. Savremena višespratna zgrada sa energetski efikasnim stanovima i atraktivnim arhitektonskim rešenjem. Idealno rešenje za urbano stanovanje.
+title: Best - Stambena zgrada Paraćin - Projektovanje modernih stambenih zgrada | Projekti Kuća
+description: Projekat moderne stambene zgrade u Paraćina, u ulici Todora od Stalaca. Savremena višespratna zgrada sa energetski efikasnim stanovima i atraktivnim arhitektonskim rešenjem. Idealno rešenje za urbano stanovanje.
 imageURL: /images/zgrada-paracin.webp
-tags:
-  [
-    'Projekat kuće',
-    'Projektovanje kuća',
+tags: [
+    # 'Projekat kuće',
+    # 'Projektovanje kuća',
     'Stambena zgrada',
     'Višespratnica',
     'Energetski efikasna zgrada',
@@ -16,6 +15,7 @@ tags:
     'Moderna zgrada',
     'moderno',
     'višeporodično',
+    'stambene zgrade',
   ]
 area: 500m²
 location: Paraćin
