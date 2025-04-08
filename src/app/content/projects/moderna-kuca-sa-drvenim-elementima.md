@@ -49,7 +49,7 @@ features:
   - Energetski efikasni sistemi grejanja i hlađenja
   - Pametni sistem upravljanja kućnim sadržajima
 completionYear: 2024
-price: Od 200.000€
+price: Upit
 ---
 
 # Projekat Moderne Kuće sa Drvenim Elementima - Savremeno stanovanje u skladu sa prirodom
