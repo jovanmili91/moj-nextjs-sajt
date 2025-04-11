@@ -124,7 +124,7 @@ const nextConfig = {
   // Preusmeravanja i prepisivanja
   async rewrites() {
     return [
-      { source: '/sitemap.xml', destination: '/api/sitemap' },
+      // { source: '/sitemap.xml', destination: '/api/sitemap' },
       // Uklonjen rewrite za blog jer nije potreban sa ispravnom konfiguracijom
     ];
   },
