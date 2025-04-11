@@ -19,7 +19,7 @@ tags:
   ]
 area: 300m²
 location: Stalać
-featured: true
+featured: false
 # Slike za galeriju - dodajte putanje do slika vašeg projekta
 images:
   - /images/stalac-rezidencija/galerija-1.webp
