@@ -1,5 +1,5 @@
 ---
-id: 12
+id: 17
 title: Stalać Rezidencija | Projekti Kuća
 description: Savremena kuća u Stalaću koja kombinuje minimalističku arhitekturu sa prostranim životnim prostorom. Projekat ističe ravne linije, kontrast svetlih i tamnih površina, velike staklene fasade i funkcionalnu organizaciju prostora. Idealan spoj elegancije, komfora i energetske efikasnosti za moderan porodični život u prirodnom okruženju.
 imageURL: /images/stalac-rezidencija.webp
