@@ -119,8 +119,8 @@ export default function ServicesPage() {
                 Stručnost i Iskustvo
               </h3>
               <p className="text-[var(--neutral-600)]">
-                Preko 15 godina iskustva u projektovanju kuća osigurava vrhunski
-                kvalitet i profesionalizam.
+                Preko 30+ godina iskustva u projektovanju kuća osigurava
+                vrhunski kvalitet i profesionalizam.
               </p>
             </div>
             <div className="rounded-lg bg-[var(--neutral-50)] p-6 shadow-md">

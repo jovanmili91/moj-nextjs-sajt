@@ -116,7 +116,7 @@ const Footer = () => {
               idejnog rešenja do izvođačkog projekta.
             </p>
             <p className="mt-3 text-sm text-[var(--neutral-400)]">
-              Sa iskustvom od preko 15 godina u projektovanju kuća, garantujemo
+              Sa iskustvom od preko 30+ godina u projektovanju kuća, garantujemo
               kvalitet i profesionalnost.
             </p>
           </div>
