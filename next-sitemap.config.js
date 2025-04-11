@@ -1,4 +1,3 @@
-/** @type {import('next-sitemap').IConfig} */
 module.exports = {
   siteUrl: 'https://www.projektikuce.rs',
   generateRobotsTxt: true,
@@ -8,7 +7,7 @@ module.exports = {
   exclude: ['/admin/*', '/404', '/500'],
   robotsTxtOptions: {
     additionalSitemaps: [
-      'https://www.projektikuce.rs/server-sitemap.xml', // Za dinamički sadržaj (opciono)
+      'https://www.projektikuce.rs/api/server-sitemap.xml', // Promenjena putanja
     ],
     policies: [
       {
