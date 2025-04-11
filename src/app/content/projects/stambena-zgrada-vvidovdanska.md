@@ -6,6 +6,7 @@ imageURL: /images/stambena-zgrada-vidovdanska.webp
 tags:
   [
     'Projekti stambenih objekata',
+    'Stambene zgrade',
     'Stambena zgrada',
     'Moderna arhitektura',
     'Urbano stanovanje',
@@ -15,6 +16,7 @@ tags:
     'Stambeni projekti',
     'Minimalistički dizajn',
     'Stambena arhitektura',
+    'stambene zgrade',
   ]
 area: 1300m²
 location: Beograd
