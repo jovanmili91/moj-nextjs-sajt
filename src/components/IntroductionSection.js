@@ -63,7 +63,7 @@ const IntroductionSection = () => {
             Vašoj Meri
           </h2>
           <p className="mb-6 text-lg leading-relaxed text-gray-700">
-            Sa preko 30+ godina iskustva i timom vrhunskih arhitekata,
+            Sa preko 30 + godina iskustva i timom vrhunskih arhitekata,
             pretvaramo vaše vizije u stvarnost. Naše projektovanje kuća obuhvata
             sve faze - od početne ideje do finalnog projekta spremnog za
             izgradnju.
